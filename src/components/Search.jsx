@@ -14,7 +14,6 @@ const Search = () => {
       );
       const { Search } = reqData;
       setData(Search);
-      console.log(data);
     } catch (error) {
       console.log(error);
     }
@@ -36,10 +35,10 @@ const Search = () => {
         <button type="submit">Search</button>
       </form>
 
-      {data?.map > 0 ? (
+      {data?.Search?.length > 0 ? (
         <ul>
           {data.map((movies) => (
-            <li key={movies.imdbID}>{movies.Titl}</li>
+            <li key={movies.imdbID}>{movies.Title}</li>
           ))}
         </ul>
       ) : null}
