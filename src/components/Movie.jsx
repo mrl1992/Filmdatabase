@@ -1,8 +1,11 @@
+import { useState } from "react";
+
 const Movie = () => {
+  const [movie, setMovie] = useState([]);
   return (
     <>
-      <div>
-        <h2>Title</h2>
+      <div className="movies">
+        <h2>movie.Title</h2>
       </div>
     </>
   );

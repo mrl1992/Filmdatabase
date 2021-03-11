@@ -2,33 +2,47 @@ import { useState } from "react";
 import { request } from "../utils/request";
 
 const Search = () => {
-  const [search, setSearch] = useState("");
   const [data, setData] = useState([]);
+  const [querry, setQuerry] = useState("");
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     console.log("submit");
-    const reqData = request(`${process.env.API_URL}`);
-    console.log(reqData);
-  };
-  {
-    /*
-  const handleSearch = (e) => {
-    setSearch(e.target.value);
+    try {
+      const reqData = await request(
+        `${process.env.API_URL}/?s=${querry}&apikey=27c4cff5&`
+      );
+      const { Search } = reqData;
+      setData(Search);
+      console.log(data);
+    } catch (error) {
+      console.log(error);
+    }
   };
 
-  const searchMovie = (e) => {
-    e.preventDefault();
+  const updQuerry = (e) => {
+    setQuerry(e.target.value);
   };
-*/
-  }
 
   return (
     <>
       <form onSubmit={handleSubmit}>
-        <input type="text" placeholder="Search...." id="search" />
-        <button type="submit"> Search</button>
+        <input
+          onChange={updQuerry}
+          type="text"
+          placeholder="Search...."
+          id="search"
+        />
+        <button type="submit">Search</button>
       </form>
+
+      {data?.map > 0 ? (
+        <ul>
+          {data.map((movies) => (
+            <li key={movies.imdbID}>{movies.Titl}</li>
+          ))}
+        </ul>
+      ) : null}
     </>
   );
 };

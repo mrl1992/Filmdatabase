@@ -3,9 +3,12 @@ const request = async (url) => {
     method: "GET",
   };
   const response = await fetch(url, config);
-  const data = await response.json();
-  console.log(data);
-  return response;
+  const getData = await response.json();
+  if (response.ok) {
+    console.log(getData);
+    return response;
+  }
+  return Promise.reject(getData);
 };
 
 export { request };
