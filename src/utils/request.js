@@ -5,10 +5,8 @@ const request = async (url) => {
   const response = await fetch(url, config);
   const getData = await response.json();
   if (response.ok) {
-    console.log(getData);
-    return response;
+    return getData;
   }
   return Promise.reject(getData);
 };
-
 export { request };
