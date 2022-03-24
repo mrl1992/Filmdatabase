@@ -1,31 +1,13 @@
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-  margin: 0;
-  padding: 0;
-  border: 0;
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
   font-size: 100%;
   font: inherit;
   vertical-align: baseline;
+  border: none;
+  margin: 0;
+  padding: 0;
 }
 
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
   display: block;
 }
 
@@ -41,8 +23,7 @@ blockquote, q {
   quotes: none;
 }
 
-blockquote:before, blockquote:after,
-q:before, q:after {
+blockquote:before, blockquote:after, q:before, q:after {
   content: "";
   content: none;
 }
@@ -58,20 +39,20 @@ table {
 
 html {
   color: #333;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Open Sans, Helvetica Neue, sans-serif;
 }
 
 body {
+  color: #fff;
   background-color: #141414;
-  color: white;
 }
 
 .form {
-  margin: 80px 50px;
-  display: flex;
   justify-content: center;
   align-items: center;
+  margin: 80px 50px;
   padding: 10px;
+  display: flex;
 }
 
 input {
@@ -79,41 +60,43 @@ input {
 }
 
 button {
+  background-color: #dc143c;
   font-size: 1.3rem;
-  background-color: crimson;
 }
 
 .grid {
   height: 90vh;
-  margin-top: 4rem;
-  margin: 0 auto;
   width: 80%;
   max-width: 100%;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
   grid-gap: 24px;
   background-color: #141414;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin: 0 auto;
+  display: grid;
 }
+
 .grid :hover {
   cursor: pointer;
   transform: scale(1.1);
 }
+
 .grid img {
-  margin: 20px auto;
   width: 200px;
+  margin: 20px auto;
 }
 
 .navigation {
-  display: flex;
+  height: 10vh;
+  color: #000;
+  background-color: #fff;
   justify-content: center;
   align-items: center;
-  height: 10vh;
-  background-color: #ffffff;
-  color: black;
+  display: flex;
 }
 
 .styleNavlink {
   padding: 0 20px;
 }
+
 /*# sourceMappingURL=index.4a508c1d.css.map */

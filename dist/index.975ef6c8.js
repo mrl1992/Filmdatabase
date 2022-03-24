@@ -145,8 +145,7 @@
 })({"kn9T2":[function(require,module,exports) {
 var Refresh = require('react-refresh/runtime');
 Refresh.injectIntoGlobalHook(window);
-window.$RefreshReg$ = function() {
-};
+window.$RefreshReg$ = function() {};
 window.$RefreshSig$ = function() {
     return function(type) {
         return type;
@@ -455,12 +454,9 @@ module.exports = require('./cjs/react-refresh-runtime.development.js');
                 inject: function(injected) {
                     return nextID++;
                 },
-                onScheduleFiberRoot: function(id, root, children) {
-                },
-                onCommitFiberRoot: function(id, root, maybePriorityLevel, didError) {
-                },
-                onCommitFiberUnmount: function() {
-                }
+                onScheduleFiberRoot: function(id, root, children) {},
+                onCommitFiberRoot: function(id, root, maybePriorityLevel, didError) {},
+                onCommitFiberUnmount: function() {}
             };
         } // Here, we just want to get a reference to scheduleRefresh.
         var oldInject = hook.inject;
@@ -477,8 +473,7 @@ module.exports = require('./cjs/react-refresh-runtime.development.js');
             helpersByRendererID.set(id, injected);
         }); // We also want to track currently mounted roots.
         var oldOnCommitFiberRoot = hook.onCommitFiberRoot;
-        var oldOnScheduleFiberRoot = hook.onScheduleFiberRoot || function() {
-        };
+        var oldOnScheduleFiberRoot = hook.onScheduleFiberRoot || function() {};
         hook.onScheduleFiberRoot = function(id, root, children) {
             if (!isPerformingRefresh) {
                 // If it was intentionally scheduled, don't attempt to restore.
@@ -645,8 +640,7 @@ function _createForOfIteratorHelper(o, allowArrayLike) {
         if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") {
             if (it) o = it;
             var i = 0;
-            var F = function F() {
-            };
+            var F = function F() {};
             return {
                 s: F,
                 n: function n() {
@@ -743,8 +737,7 @@ function Module(moduleName) {
         _acceptCallbacks: [],
         _disposeCallbacks: [],
         accept: function accept(fn) {
-            this._acceptCallbacks.push(fn || function() {
-            });
+            this._acceptCallbacks.push(fn || function() {});
         },
         dispose: function dispose(fn) {
             this._disposeCallbacks.push(fn);
@@ -753,7 +746,7 @@ function Module(moduleName) {
     module.bundle.hotData = undefined;
 }
 module.bundle.Module = Module;
-var checkedAssets, acceptedAssets, assetsToAccept;
+var checkedAssets, acceptedAssets, assetsToAccept /*: Array<[ParcelRequire, string]> */ ;
 function getHostname() {
     return HMR_HOST || (location.protocol.indexOf('http') === 0 ? location.hostname : 'localhost');
 }
@@ -767,10 +760,8 @@ if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
     var protocol = HMR_SECURE || location.protocol == 'https:' && !/localhost|127.0.0.1|0.0.0.0/.test(hostname) ? 'wss' : 'ws';
     var ws = new WebSocket(protocol + '://' + hostname + (port ? ':' + port : '') + '/'); // $FlowFixMe
     ws.onmessage = function(event) {
-        checkedAssets = {
-        };
-        acceptedAssets = {
-        };
+        checkedAssets = {} /*: {|[string]: boolean|} */ ;
+        acceptedAssets = {} /*: {|[string]: boolean|} */ ;
         assetsToAccept = [];
         var data = JSON.parse(event.data);
         if (data.type === 'update') {
@@ -977,8 +968,7 @@ function hmrAcceptCheckOne(bundle, id, depsByBundle) {
 }
 function hmrAcceptRun(bundle, id) {
     var cached = bundle.cache[id];
-    bundle.hotData = {
-    };
+    bundle.hotData = {};
     if (cached && cached.hot) cached.hot.data = bundle.hotData;
     if (cached && cached.hot && cached.hot._disposeCallbacks.length) cached.hot._disposeCallbacks.forEach(function(cb) {
         cb(bundle.hotData);
@@ -1010,8 +1000,7 @@ var _react = _interopRequireDefault(require("react"));
 var _reactDom = _interopRequireDefault(require("react-dom"));
 var _App = _interopRequireDefault(require("./App"));
 var _jsxRuntime = require("react/jsx-runtime");
-_reactDom["default"].render(/*#__PURE__*/ (0, _jsxRuntime.jsx)(_App["default"], {
-}), document.getElementById("root"));
+_reactDom["default"].render(/*#__PURE__*/ (0, _jsxRuntime.jsx)(_App["default"], {}), document.getElementById("root"));
 
   $parcel$ReactRefreshHelpers$20e5.postlude(module);
 } finally {
@@ -1124,8 +1113,7 @@ module.exports = require('./cjs/react.development.js');
    * @type {ReactComponent}
    */ current: null
     };
-    var ReactDebugCurrentFrame1 = {
-    };
+    var ReactDebugCurrentFrame1 = {};
     var currentExtraStackFrame = null;
     function setExtraStackFrame(stack) {
         currentExtraStackFrame = stack;
@@ -1185,8 +1173,7 @@ module.exports = require('./cjs/react.development.js');
         // eslint-disable-next-line react-internal/no-production-logging
         Function.prototype.apply.call(console[level], console, argsWithFormat);
     }
-    var didWarnStateUpdateForUnmountedComponent = {
-    };
+    var didWarnStateUpdateForUnmountedComponent = {};
     function warnNoop(publicInstance, callerName) {
         var _constructor = publicInstance.constructor;
         var componentName = _constructor && (_constructor.displayName || _constructor.name) || 'ReactClass';
@@ -1254,8 +1241,7 @@ module.exports = require('./cjs/react.development.js');
             warnNoop(publicInstance, 'setState');
         }
     };
-    var emptyObject = {
-    };
+    var emptyObject = {};
     Object.freeze(emptyObject);
     /**
  * Base class helpers for the updating state of a component.
@@ -1266,8 +1252,7 @@ module.exports = require('./cjs/react.development.js');
         // renderer.
         this.updater = updater || ReactNoopUpdateQueue;
     }
-    Component1.prototype.isReactComponent = {
-    };
+    Component1.prototype.isReactComponent = {};
     /**
  * Sets a subset of the state. Always use this to mutate
  * state. You should treat `this.state` as immutable.
@@ -1331,8 +1316,7 @@ module.exports = require('./cjs/react.development.js');
         });
     };
     for(var fnName in deprecatedAPIs)if (deprecatedAPIs.hasOwnProperty(fnName)) defineDeprecationWarning(fnName, deprecatedAPIs[fnName]);
-    function ComponentDummy() {
-    }
+    function ComponentDummy() {}
     ComponentDummy.prototype = Component1.prototype;
     /**
  * Convenience component with default shallow equality check for sCU.
@@ -1414,8 +1398,7 @@ module.exports = require('./cjs/react.development.js');
         __source: true
     };
     var specialPropKeyWarningShown, specialPropRefWarningShown, didWarnAboutStringRefs;
-    didWarnAboutStringRefs = {
-    };
+    didWarnAboutStringRefs = {};
     function hasValidRef(config) {
         if (hasOwnProperty.call(config, 'ref')) {
             var getter = Object.getOwnPropertyDescriptor(config, 'ref').get;
@@ -1460,7 +1443,7 @@ module.exports = require('./cjs/react.development.js');
         if (typeof config.ref === 'string' && ReactCurrentOwner.current && config.__self && ReactCurrentOwner.current.stateNode !== config.__self) {
             var componentName = getComponentName(ReactCurrentOwner.current.type);
             if (!didWarnAboutStringRefs[componentName]) {
-                error1("Component \"%s\" contains the string ref \"%s\". Support for string refs will be removed in a future major release. This case cannot be automatically converted to an arrow function. We ask you to manually fix this case by using useRef() or createRef() instead. Learn more about using refs safely here: https://reactjs.org/link/strict-mode-string-ref", componentName, config.ref);
+                error1('Component "%s" contains the string ref "%s". Support for string refs will be removed in a future major release. This case cannot be automatically converted to an arrow function. We ask you to manually fix this case by using useRef() or createRef() instead. Learn more about using refs safely here: https://reactjs.org/link/strict-mode-string-ref', componentName, config.ref);
                 didWarnAboutStringRefs[componentName] = true;
             }
         }
@@ -1500,8 +1483,7 @@ module.exports = require('./cjs/react.development.js');
         // an external backing store so that we can freeze the whole object.
         // This can be replaced with a WeakMap once they are implemented in
         // commonly used development environments.
-        element._store = {
-        }; // To make comparing ReactElements easier for testing purposes, we make
+        element._store = {}; // To make comparing ReactElements easier for testing purposes, we make
         // the validation flag non-enumerable (where possible, which should
         // include every environment we run tests in), so the test framework
         // ignores it.
@@ -1535,8 +1517,7 @@ module.exports = require('./cjs/react.development.js');
  * See https://reactjs.org/docs/react-api.html#createelement
  */ function createElement(type, config, children) {
         var propName; // Reserved names are extracted
-        var props = {
-        };
+        var props = {};
         var key = null;
         var ref = null;
         var self = null;
@@ -1581,8 +1562,7 @@ module.exports = require('./cjs/react.development.js');
  */ function cloneElement(element, config, children) {
         if (!!(element === null || element === undefined)) throw Error("React.cloneElement(...): The argument must be a React element, but you passed " + element + ".");
         var propName; // Original props are copied
-        var props = _assign({
-        }, element.props); // Reserved names are extracted
+        var props = _assign({}, element.props); // Reserved names are extracted
         var key = element.key;
         var ref = element.ref; // Self is preserved since the owner is preserved.
         var self = element._self; // Source is preserved since cloneElement is unlikely to be targeted by a
@@ -2110,8 +2090,7 @@ module.exports = require('./cjs/react.development.js');
     var prevGroup;
     var prevGroupCollapsed;
     var prevGroupEnd;
-    function disabledLog() {
-    }
+    function disabledLog() {}
     disabledLog.__reactDisabledLog = true;
     function disableLogs() {
         if (disabledDepth === 0) {
@@ -2149,32 +2128,25 @@ module.exports = require('./cjs/react.development.js');
                 writable: true
             }; // $FlowFixMe Flow thinks console is immutable.
             Object.defineProperties(console, {
-                log: _assign({
-                }, props, {
+                log: _assign({}, props, {
                     value: prevLog
                 }),
-                info: _assign({
-                }, props, {
+                info: _assign({}, props, {
                     value: prevInfo
                 }),
-                warn: _assign({
-                }, props, {
+                warn: _assign({}, props, {
                     value: prevWarn
                 }),
-                error: _assign({
-                }, props, {
+                error: _assign({}, props, {
                     value: prevError
                 }),
-                group: _assign({
-                }, props, {
+                group: _assign({}, props, {
                     value: prevGroup
                 }),
-                groupCollapsed: _assign({
-                }, props, {
+                groupCollapsed: _assign({}, props, {
                     value: prevGroupCollapsed
                 }),
-                groupEnd: _assign({
-                }, props, {
+                groupEnd: _assign({}, props, {
                     value: prevGroupEnd
                 })
             });
@@ -2332,13 +2304,11 @@ module.exports = require('./cjs/react.development.js');
                 try {
                     // Lazy may contain any component type so we recursively resolve it.
                     return describeUnknownElementTypeFrameInDEV(init(payload), source, ownerFn);
-                } catch (x) {
-                }
+                } catch (x) {}
         }
         return '';
     }
-    var loggedTypeFailures = {
-    };
+    var loggedTypeFailures = {};
     var ReactDebugCurrentFrame$1 = ReactSharedInternals.ReactDebugCurrentFrame;
     function setCurrentlyValidatingElement(element) {
         if (element) {
@@ -2413,8 +2383,7 @@ module.exports = require('./cjs/react.development.js');
  * Warn if there's no key explicitly set on dynamic arrays of children or
  * object keys are not valid. This allows us to keep track of children between
  * updates.
- */ var ownerHasKeyUseWarning = {
-    };
+ */ var ownerHasKeyUseWarning = {};
     function getCurrentComponentErrorInfo(parentType) {
         var info = getDeclarationErrorAddendum();
         if (!info) {
@@ -2445,7 +2414,7 @@ module.exports = require('./cjs/react.development.js');
         if (element && element._owner && element._owner !== ReactCurrentOwner.current) // Give the component that originally created this child.
         childOwner = " It was passed a child from " + getComponentName(element._owner.type) + ".";
         setCurrentlyValidatingElement$1(element);
-        error1("Each child in a list should have a unique \"key\" prop.%s%s See https://reactjs.org/link/warning-keys for more information.", currentComponentErrorInfo, childOwner);
+        error1('Each child in a list should have a unique "key" prop.%s%s See https://reactjs.org/link/warning-keys for more information.', currentComponentErrorInfo, childOwner);
         setCurrentlyValidatingElement$1(null);
     }
     /**
@@ -2580,8 +2549,7 @@ module.exports = require('./cjs/react.development.js');
         return newElement;
     }
     try {
-        var frozenObject = Object.freeze({
-        });
+        var frozenObject = Object.freeze({});
         /* eslint-disable no-new */ new Map([
             [
                 frozenObject,
@@ -2591,8 +2559,7 @@ module.exports = require('./cjs/react.development.js');
         new Set([
             frozenObject
         ]);
-    /* eslint-enable no-new */ } catch (e) {
-    }
+    /* eslint-enable no-new */ } catch (e) {}
     var createElement$1 = createElementWithValidation;
     var cloneElement$1 = cloneElementWithValidation;
     var createFactory = createFactoryWithValidation;
@@ -2647,25 +2614,22 @@ function shouldUseNative() {
         if (!Object.assign) return false;
         // Detect buggy property enumeration order in older V8 versions.
         // https://bugs.chromium.org/p/v8/issues/detail?id=4118
-        var test1 = "abc"; // eslint-disable-line no-new-wrappers
+        var test1 = new String('abc'); // eslint-disable-line no-new-wrappers
         test1[5] = 'de';
         if (Object.getOwnPropertyNames(test1)[0] === '5') return false;
         // https://bugs.chromium.org/p/v8/issues/detail?id=3056
-        var test2 = {
-        };
+        var test2 = {};
         for(var i = 0; i < 10; i++)test2['_' + String.fromCharCode(i)] = i;
         var order2 = Object.getOwnPropertyNames(test2).map(function(n) {
             return test2[n];
         });
         if (order2.join('') !== '0123456789') return false;
         // https://bugs.chromium.org/p/v8/issues/detail?id=3056
-        var test3 = {
-        };
+        var test3 = {};
         'abcdefghijklmnopqrst'.split('').forEach(function(letter) {
             test3[letter] = letter;
         });
-        if (Object.keys(Object.assign({
-        }, test3)).join('') !== 'abcdefghijklmnopqrst') return false;
+        if (Object.keys(Object.assign({}, test3)).join('') !== 'abcdefghijklmnopqrst') return false;
         return true;
     } catch (err) {
         // We don't expect any of the above to throw, but better to be safe.
@@ -2781,15 +2745,13 @@ module.exports = require('./cjs/react-dom.development.js');
     var allNativeEvents = new Set();
     /**
  * Mapping from registration name to event name
- */ var registrationNameDependencies1 = {
-    };
+ */ var registrationNameDependencies1 = {};
     /**
  * Mapping from lowercase registration names to the properly cased version,
  * used to warn in the case of missing event handlers. Available
  * only in true.
  * @type {Object}
- */ var possibleRegistrationNames1 = {
-    }; // Trust the developer to only use possibleRegistrationNames in true
+ */ var possibleRegistrationNames1 = {}; // Trust the developer to only use possibleRegistrationNames in true
     function registerTwoPhaseEvent(registrationName, dependencies) {
         registerDirectEvent(registrationName, dependencies);
         registerDirectEvent(registrationName + 'Capture', dependencies);
@@ -2828,10 +2790,8 @@ module.exports = require('./cjs/react-dom.development.js');
     var ROOT_ATTRIBUTE_NAME = 'data-reactroot';
     var VALID_ATTRIBUTE_NAME_REGEX = new RegExp('^[' + ATTRIBUTE_NAME_START_CHAR + '][' + ATTRIBUTE_NAME_CHAR + ']*$');
     var hasOwnProperty = Object.prototype.hasOwnProperty;
-    var illegalAttributeNameCache = {
-    };
-    var validatedAttributeNameCache = {
-    };
+    var illegalAttributeNameCache = {};
+    var validatedAttributeNameCache = {};
     function isAttributeNameSafe(attributeName) {
         if (hasOwnProperty.call(validatedAttributeNameCache, attributeName)) return true;
         if (hasOwnProperty.call(illegalAttributeNameCache, attributeName)) return false;
@@ -2898,8 +2858,7 @@ module.exports = require('./cjs/react-dom.development.js');
     } // When adding attributes to this list, be sure to also add them to
     // the `possibleStandardNames` module to ensure casing and incorrect
     // name warnings.
-    var properties = {
-    }; // These props are reserved by React. They shouldn't be written to the DOM.
+    var properties = {}; // These props are reserved by React. They shouldn't be written to the DOM.
     var reservedProps = [
         'children',
         'dangerouslySetInnerHTML',
@@ -3326,8 +3285,7 @@ module.exports = require('./cjs/react-dom.development.js');
     var prevGroup;
     var prevGroupCollapsed;
     var prevGroupEnd;
-    function disabledLog() {
-    }
+    function disabledLog() {}
     disabledLog.__reactDisabledLog = true;
     function disableLogs() {
         if (disabledDepth === 0) {
@@ -3365,32 +3323,25 @@ module.exports = require('./cjs/react-dom.development.js');
                 writable: true
             }; // $FlowFixMe Flow thinks console is immutable.
             Object.defineProperties(console, {
-                log: _assign({
-                }, props, {
+                log: _assign({}, props, {
                     value: prevLog
                 }),
-                info: _assign({
-                }, props, {
+                info: _assign({}, props, {
                     value: prevInfo
                 }),
-                warn: _assign({
-                }, props, {
+                warn: _assign({}, props, {
                     value: prevWarn
                 }),
-                error: _assign({
-                }, props, {
+                error: _assign({}, props, {
                     value: prevError
                 }),
-                group: _assign({
-                }, props, {
+                group: _assign({}, props, {
                     value: prevGroup
                 }),
-                groupCollapsed: _assign({
-                }, props, {
+                groupCollapsed: _assign({}, props, {
                     value: prevGroupCollapsed
                 }),
-                groupEnd: _assign({
-                }, props, {
+                groupEnd: _assign({}, props, {
                     value: prevGroupEnd
                 })
             });
@@ -3551,8 +3502,7 @@ module.exports = require('./cjs/react-dom.development.js');
                 try {
                     // Lazy may contain any component type so we recursively resolve it.
                     return describeUnknownElementTypeFrameInDEV(init(payload), source, ownerFn);
-                } catch (x) {
-                }
+                } catch (x) {}
         }
         return '';
     }
@@ -3820,8 +3770,7 @@ module.exports = require('./cjs/react-dom.development.js');
  */ function getHostProps(element, props) {
         var node = element;
         var checked = props.checked;
-        var hostProps = _assign({
-        }, props, {
+        var hostProps = _assign({}, props, {
             defaultChecked: undefined,
             defaultValue: undefined,
             value: undefined,
@@ -4054,8 +4003,7 @@ module.exports = require('./cjs/react-dom.development.js');
         var options = node.options;
         if (multiple) {
             var selectedValues = propValue;
-            var selectedValue = {
-            };
+            var selectedValue = {};
             for(var i = 0; i < selectedValues.length; i++)// Prefix to avoid chaos with special keys.
             selectedValue['$' + selectedValues[i]] = true;
             for(var _i = 0; _i < options.length; _i++){
@@ -4094,8 +4042,7 @@ module.exports = require('./cjs/react-dom.development.js');
  * If `defaultValue` is provided, any options with the supplied values will be
  * selected.
  */ function getHostProps$2(element, props) {
-        return _assign({
-        }, props, {
+        return _assign({}, props, {
             value: undefined
         });
     }
@@ -4159,8 +4106,7 @@ module.exports = require('./cjs/react-dom.development.js');
         // completely solve this IE9 bug), but Sebastian+Sophie seemed to like this
         // solution. The value can be a boolean or object so that's why it's forced
         // to be a string.
-        var hostProps = _assign({
-        }, props, {
+        var hostProps = _assign({}, props, {
             value: undefined,
             defaultValue: undefined,
             children: toString(node._wrapperState.initialValue)
@@ -4696,17 +4642,14 @@ module.exports = require('./cjs/react-dom.development.js');
  */ function hyphenateStyleName(name) {
         return name.replace(uppercasePattern, '-$1').toLowerCase().replace(msPattern, '-ms-');
     }
-    var warnValidStyle = function() {
-    };
+    var warnValidStyle = function() {};
     // 'msTransform' is correct, but the other prefixes should be capitalized
     var badVendoredStyleNamePattern = /^(?:webkit|moz|o)[A-Z]/;
     var msPattern$1 = /^-ms-/;
     var hyphenPattern = /-(.)/g; // style values shouldn't contain a semicolon
     var badStyleValueWithSemicolonPattern = /;\s*$/;
-    var warnedStyleNames = {
-    };
-    var warnedStyleValues = {
-    };
+    var warnedStyleNames = {};
+    var warnedStyleValues = {};
     var warnedForNaNValue = false;
     var warnedForInfinityValue = false;
     var camelize = function(string) {
@@ -4729,7 +4672,7 @@ module.exports = require('./cjs/react-dom.development.js');
     var warnStyleValueWithSemicolon = function(name, value) {
         if (warnedStyleValues.hasOwnProperty(value) && warnedStyleValues[value]) return;
         warnedStyleValues[value] = true;
-        error1("Style property values shouldn't contain a semicolon. Try \"%s: %s\" instead.", name, value.replace(badStyleValueWithSemicolonPattern, ''));
+        error1('Style property values shouldn\'t contain a semicolon. Try "%s: %s" instead.', name, value.replace(badStyleValueWithSemicolonPattern, ''));
     };
     var warnStyleValueIsNaN = function(name, value) {
         if (warnedForNaNValue) return;
@@ -4802,8 +4745,7 @@ module.exports = require('./cjs/react-dom.development.js');
  * }. This can be read as "the overflowY property was set by the overflow
  * shorthand". That is, the values are the property that each was derived from.
  */ function expandShorthandMap(styles) {
-        var expanded = {
-        };
+        var expanded = {};
         for(var key in styles){
             var longhands = shorthandToLonghand[key] || [
                 key
@@ -4829,8 +4771,7 @@ module.exports = require('./cjs/react-dom.development.js');
         if (!nextStyles) return;
         var expandedUpdates = expandShorthandMap(styleUpdates);
         var expandedStyles = expandShorthandMap(nextStyles);
-        var warnedAbout = {
-        };
+        var warnedAbout = {};
         for(var key in expandedUpdates){
             var originalKey = expandedUpdates[key];
             var correctOriginalKey = expandedStyles[key];
@@ -5447,8 +5388,7 @@ module.exports = require('./cjs/react-dom.development.js');
         'aria-rowspan': 0,
         'aria-setsize': 0
     };
-    var warnedProperties = {
-    };
+    var warnedProperties = {};
     var rARIA = new RegExp('^(aria)-[' + ATTRIBUTE_NAME_CHAR + ']*$');
     var rARIACamel = new RegExp('^(aria)[A-Z][' + ATTRIBUTE_NAME_CHAR + ']*$');
     var hasOwnProperty$1 = Object.prototype.hasOwnProperty;
@@ -5510,10 +5450,8 @@ module.exports = require('./cjs/react-dom.development.js');
             else error1("`value` prop on `%s` should not be null. Consider using an empty string to clear the component or `undefined` for uncontrolled components.", type);
         }
     }
-    var validateProperty$1 = function() {
-    };
-    var warnedProperties$1 = {
-    };
+    var validateProperty$1 = function() {};
+    var warnedProperties$1 = {};
     var _hasOwnProperty = Object.prototype.hasOwnProperty;
     var EVENT_NAME_REGEX = /^on./;
     var INVALID_EVENT_NAME_REGEX = /^on[^A-Z]/;
@@ -5587,8 +5525,8 @@ module.exports = require('./cjs/react-dom.development.js');
             return true;
         }
         if (typeof value === 'boolean' && shouldRemoveAttributeWithWarning(name, value, propertyInfo, false)) {
-            if (value) error1("Received `%s` for a non-boolean attribute `%s`.\n\nIf you want to write it to the DOM, pass a string instead: %s=\"%s\" or %s={value.toString()}.", value, name, name, value, name);
-            else error1("Received `%s` for a non-boolean attribute `%s`.\n\nIf you want to write it to the DOM, pass a string instead: %s=\"%s\" or %s={value.toString()}.\n\nIf you used to conditionally omit it with %s={condition && value}, pass %s={condition ? value : undefined} instead.", value, name, name, value, name, name, name);
+            if (value) error1('Received `%s` for a non-boolean attribute `%s`.\n\nIf you want to write it to the DOM, pass a string instead: %s="%s" or %s={value.toString()}.', value, name, name, value, name);
+            else error1('Received `%s` for a non-boolean attribute `%s`.\n\nIf you want to write it to the DOM, pass a string instead: %s="%s" or %s={value.toString()}.\n\nIf you used to conditionally omit it with %s={condition && value}, pass %s={condition ? value : undefined} instead.', value, name, name, value, name, name, name);
             warnedProperties$1[name] = true;
             return true;
         } // Now that we've validated casing, do not validate
@@ -5696,8 +5634,7 @@ module.exports = require('./cjs/react-dom.development.js');
     var discreteUpdatesImpl = function(fn, a, b, c, d) {
         return fn(a, b, c, d);
     };
-    var flushDiscreteUpdatesImpl = function() {
-    };
+    var flushDiscreteUpdatesImpl = function() {};
     var batchedEventUpdatesImpl = batchedUpdatesImpl;
     var isInsideEventHandler = false;
     var isBatchingEventUpdates = false;
@@ -5798,8 +5735,7 @@ module.exports = require('./cjs/react-dom.development.js');
     var passiveBrowserEventsSupported = false; // Check if browser support events with passive listeners
     // https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener#Safely_detecting_option_support
     if (canUseDOM) try {
-        var options1 = {
-        }; // $FlowFixMe: Ignore Flow complaining about needing a value
+        var options1 = {}; // $FlowFixMe: Ignore Flow complaining about needing a value
         Object.defineProperty(options1, 'passive', {
             get: function() {
                 passiveBrowserEventsSupported = true;
@@ -5903,8 +5839,7 @@ module.exports = require('./cjs/react-dom.development.js');
                     // We'll remember this to later decide whether to log it or not.
                     if (error != null && typeof error === 'object') try {
                         error._suppressLogging = true;
-                    } catch (inner) {
-                    }
+                    } catch (inner) {}
                 }
             } // Create a fake event type.
             var evtType = "react-" + (name ? name : 'invokeguardedcallback'); // Attach our event handlers
@@ -6548,8 +6483,7 @@ module.exports = require('./cjs/react-dom.development.js');
  * @param {string} eventName
  * @returns {object}
  */ function makePrefixMap(styleProp, eventName) {
-        var prefixes = {
-        };
+        var prefixes = {};
         prefixes[styleProp.toLowerCase()] = eventName.toLowerCase();
         prefixes['Webkit' + styleProp] = 'webkit' + eventName;
         prefixes['Moz' + styleProp] = 'moz' + eventName;
@@ -6565,12 +6499,10 @@ module.exports = require('./cjs/react-dom.development.js');
     };
     /**
  * Event names that have already been detected and prefixed (if applicable).
- */ var prefixedEventNames = {
-    };
+ */ var prefixedEventNames = {};
     /**
  * Element to check for prefixes on.
- */ var style1 = {
-    };
+ */ var style1 = {};
     /**
  * Bootstrap if a DOM exists.
  */ if (canUseDOM) {
@@ -6870,8 +6802,7 @@ module.exports = require('./cjs/react-dom.development.js');
     var IdleLanes = /*                             */ 805306368;
     var OffscreenLane = /*                   */ 1073741824;
     var NoTimestamp = -1;
-    function setCurrentUpdateLanePriority(newLanePriority) {
-    } // "Registers" used to "return" multiple values
+    function setCurrentUpdateLanePriority(newLanePriority) {} // "Registers" used to "return" multiple values
     // Used by getHighestPriorityLanes and getNextLanes:
     var return_highestLanePriority = DefaultLanePriority;
     function getHighestPriorityLanes(lanes) {
@@ -7619,8 +7550,7 @@ module.exports = require('./cjs/react-dom.development.js');
      * We release all dispatched `SyntheticEvent`s after each event loop, adding
      * them back into the pool. This allows a way to hold onto a reference that
      * won't be added back into the pool.
-     */ persist: function() {
-            },
+     */ persist: function() {},
             /**
      * Checks if this event should be released back into the pool.
      *
@@ -7643,8 +7573,7 @@ module.exports = require('./cjs/react-dom.development.js');
         isTrusted: 0
     };
     var SyntheticEvent = createSyntheticEvent(EventInterface);
-    var UIEventInterface = _assign({
-    }, EventInterface, {
+    var UIEventInterface = _assign({}, EventInterface, {
         view: 0,
         detail: 0
     });
@@ -7667,8 +7596,7 @@ module.exports = require('./cjs/react-dom.development.js');
     /**
  * @interface MouseEvent
  * @see http://www.w3.org/TR/DOM-Level-3-Events/
- */ var MouseEventInterface = _assign({
-    }, UIEventInterface, {
+ */ var MouseEventInterface = _assign({}, UIEventInterface, {
         screenX: 0,
         screenY: 0,
         clientX: 0,
@@ -7703,16 +7631,14 @@ module.exports = require('./cjs/react-dom.development.js');
     /**
  * @interface DragEvent
  * @see http://www.w3.org/TR/DOM-Level-3-Events/
- */ var DragEventInterface = _assign({
-    }, MouseEventInterface, {
+ */ var DragEventInterface = _assign({}, MouseEventInterface, {
         dataTransfer: 0
     });
     var SyntheticDragEvent = createSyntheticEvent(DragEventInterface);
     /**
  * @interface FocusEvent
  * @see http://www.w3.org/TR/DOM-Level-3-Events/
- */ var FocusEventInterface = _assign({
-    }, UIEventInterface, {
+ */ var FocusEventInterface = _assign({}, UIEventInterface, {
         relatedTarget: 0
     });
     var SyntheticFocusEvent = createSyntheticEvent(FocusEventInterface);
@@ -7720,8 +7646,7 @@ module.exports = require('./cjs/react-dom.development.js');
  * @interface Event
  * @see http://www.w3.org/TR/css3-animations/#AnimationEvent-interface
  * @see https://developer.mozilla.org/en-US/docs/Web/API/AnimationEvent
- */ var AnimationEventInterface = _assign({
-    }, EventInterface, {
+ */ var AnimationEventInterface = _assign({}, EventInterface, {
         animationName: 0,
         elapsedTime: 0,
         pseudoElement: 0
@@ -7730,8 +7655,7 @@ module.exports = require('./cjs/react-dom.development.js');
     /**
  * @interface Event
  * @see http://www.w3.org/TR/clipboard-apis/
- */ var ClipboardEventInterface = _assign({
-    }, EventInterface, {
+ */ var ClipboardEventInterface = _assign({}, EventInterface, {
         clipboardData: function(event) {
             return 'clipboardData' in event ? event.clipboardData : window.clipboardData;
         }
@@ -7740,8 +7664,7 @@ module.exports = require('./cjs/react-dom.development.js');
     /**
  * @interface Event
  * @see http://www.w3.org/TR/DOM-Level-3-Events/#events-compositionevents
- */ var CompositionEventInterface = _assign({
-    }, EventInterface, {
+ */ var CompositionEventInterface = _assign({}, EventInterface, {
         data: 0
     });
     var SyntheticCompositionEvent = createSyntheticEvent(CompositionEventInterface);
@@ -7856,8 +7779,7 @@ module.exports = require('./cjs/react-dom.development.js');
     /**
  * @interface KeyboardEvent
  * @see http://www.w3.org/TR/DOM-Level-3-Events/
- */ var KeyboardEventInterface = _assign({
-    }, UIEventInterface, {
+ */ var KeyboardEventInterface = _assign({}, UIEventInterface, {
         key: getEventKey,
         code: 0,
         location: 0,
@@ -7899,8 +7821,7 @@ module.exports = require('./cjs/react-dom.development.js');
     /**
  * @interface PointerEvent
  * @see http://www.w3.org/TR/pointerevents/
- */ var PointerEventInterface = _assign({
-    }, MouseEventInterface, {
+ */ var PointerEventInterface = _assign({}, MouseEventInterface, {
         pointerId: 0,
         width: 0,
         height: 0,
@@ -7916,8 +7837,7 @@ module.exports = require('./cjs/react-dom.development.js');
     /**
  * @interface TouchEvent
  * @see http://www.w3.org/TR/touch-events/
- */ var TouchEventInterface = _assign({
-    }, UIEventInterface, {
+ */ var TouchEventInterface = _assign({}, UIEventInterface, {
         touches: 0,
         targetTouches: 0,
         changedTouches: 0,
@@ -7932,8 +7852,7 @@ module.exports = require('./cjs/react-dom.development.js');
  * @interface Event
  * @see http://www.w3.org/TR/2009/WD-css3-transitions-20090320/#transition-events-
  * @see https://developer.mozilla.org/en-US/docs/Web/API/TransitionEvent
- */ var TransitionEventInterface = _assign({
-    }, EventInterface, {
+ */ var TransitionEventInterface = _assign({}, EventInterface, {
         propertyName: 0,
         elapsedTime: 0,
         pseudoElement: 0
@@ -7942,8 +7861,7 @@ module.exports = require('./cjs/react-dom.development.js');
     /**
  * @interface WheelEvent
  * @see http://www.w3.org/TR/DOM-Level-3-Events/
- */ var WheelEventInterface = _assign({
-    }, MouseEventInterface, {
+ */ var WheelEventInterface = _assign({}, MouseEventInterface, {
         deltaX: function(event) {
             return 'deltaX' in event ? event.deltaX : 'wheelDeltaX' in event ? -event.wheelDeltaX : 0;
         },
@@ -9561,8 +9479,7 @@ module.exports = require('./cjs/react-dom.development.js');
     function getOwnerDocumentFromRootContainer(rootContainerElement) {
         return rootContainerElement.nodeType === DOCUMENT_NODE ? rootContainerElement : rootContainerElement.ownerDocument;
     }
-    function noop() {
-    }
+    function noop() {}
     function trapClickOnNonInteractiveElement(node) {
         // Mobile Safari does not fire properly bubble click events on
         // non-interactive elements, which means delegated click listeners do not
@@ -9814,8 +9731,7 @@ module.exports = require('./cjs/react-dom.development.js');
             if (propKey === STYLE) {
                 var lastStyle = lastProps[propKey];
                 for(styleName in lastStyle)if (lastStyle.hasOwnProperty(styleName)) {
-                    if (!styleUpdates) styleUpdates = {
-                    };
+                    if (!styleUpdates) styleUpdates = {};
                     styleUpdates[styleName] = '';
                 }
             } else if (propKey === DANGEROUSLY_SET_INNER_HTML || propKey === CHILDREN) ;
@@ -9841,14 +9757,12 @@ module.exports = require('./cjs/react-dom.development.js');
                 if (lastProp) {
                     // Unset styles on `lastProp` but not on `nextProp`.
                     for(styleName in lastProp)if (lastProp.hasOwnProperty(styleName) && (!nextProp || !nextProp.hasOwnProperty(styleName))) {
-                        if (!styleUpdates) styleUpdates = {
-                        };
+                        if (!styleUpdates) styleUpdates = {};
                         styleUpdates[styleName] = '';
                     }
                      // Update styles that changed since `lastProp`.
                     for(styleName in nextProp)if (nextProp.hasOwnProperty(styleName) && lastProp[styleName] !== nextProp[styleName]) {
-                        if (!styleUpdates) styleUpdates = {
-                        };
+                        if (!styleUpdates) styleUpdates = {};
                         styleUpdates[styleName] = nextProp[styleName];
                     }
                 } else {
@@ -10171,10 +10085,8 @@ module.exports = require('./cjs/react-dom.development.js');
                 return;
         }
     }
-    var validateDOMNesting = function() {
-    };
-    var updatedAncestorInfo = function() {
-    };
+    var validateDOMNesting = function() {};
+    var updatedAncestorInfo = function() {};
     // This validation code was written based on the HTML5 parsing spec:
     // https://html.spec.whatwg.org/multipage/syntax.html#has-an-element-in-scope
     //
@@ -10311,8 +10223,7 @@ module.exports = require('./cjs/react-dom.development.js');
         dlItemTagAutoclosing: null
     };
     updatedAncestorInfo = function(oldInfo, tag) {
-        var ancestorInfo = _assign({
-        }, oldInfo || emptyAncestorInfo);
+        var ancestorInfo = _assign({}, oldInfo || emptyAncestorInfo);
         var info = {
             tag: tag
         };
@@ -10474,8 +10385,7 @@ module.exports = require('./cjs/react-dom.development.js');
         }
         return null;
     };
-    var didWarn$1 = {
-    };
+    var didWarn$1 = {};
     validateDOMNesting = function(childTag, childText, ancestorInfo) {
         ancestorInfo = ancestorInfo || emptyAncestorInfo;
         var parentInfo = ancestorInfo.current;
@@ -10970,8 +10880,7 @@ module.exports = require('./cjs/react-dom.development.js');
         if (elementListenerSet === undefined) elementListenerSet = node[internalEventHandlersKey] = new Set();
         return elementListenerSet;
     }
-    var loggedTypeFailures = {
-    };
+    var loggedTypeFailures = {};
     var ReactDebugCurrentFrame$1 = ReactSharedInternals.ReactDebugCurrentFrame;
     function setCurrentlyValidatingElement(element) {
         if (element) {
@@ -11041,10 +10950,8 @@ module.exports = require('./cjs/react-dom.development.js');
         cursor.current = value;
     }
     var warnedAboutMissingGetChildContext;
-    warnedAboutMissingGetChildContext = {
-    };
-    var emptyContextObject = {
-    };
+    warnedAboutMissingGetChildContext = {};
+    var emptyContextObject = {};
     Object.freeze(emptyContextObject);
     var contextStackCursor = createCursor(emptyContextObject); // A cursor to a boolean indicating whether the context has changed.
     var didPerformWorkStackCursor = createCursor(false); // Keep track of the previous context object that was on the stack.
@@ -11073,8 +10980,7 @@ module.exports = require('./cjs/react-dom.development.js');
         // This may trigger infinite loops if componentWillReceiveProps calls setState.
         var instance = workInProgress.stateNode;
         if (instance && instance.__reactInternalMemoizedUnmaskedChildContext === unmaskedContext) return instance.__reactInternalMemoizedMaskedChildContext;
-        var context = {
-        };
+        var context = {};
         for(var key in contextTypes)context[key] = unmaskedContext[key];
         var name = getComponentName(type) || 'Unknown';
         checkPropTypes(contextTypes, context, 'context', name);
@@ -11120,8 +11026,7 @@ module.exports = require('./cjs/react-dom.development.js');
         }
         var name = getComponentName(type) || 'Unknown';
         checkPropTypes(childContextTypes, childContext, 'child context', name);
-        return _assign({
-        }, parentContext, childContext);
+        return _assign({}, parentContext, childContext);
     }
     function pushContextProvider(workInProgress) {
         var instance = workInProgress.stateNode; // We push the context as early as possible to ensure stack integrity.
@@ -11235,8 +11140,7 @@ module.exports = require('./cjs/react-dom.development.js');
     // react-dom is used with production (non-profiling) bundle of
     // scheduler/tracing
     if (!(tracing.__interactionsRef != null && tracing.__interactionsRef.current != null)) throw Error("It is not supported to run the profiling version of a renderer (for example, `react-dom/profiling`) without also replacing the `scheduler/tracing` module with `scheduler/tracing-profiling`. Your bundler might have a setting for aliasing both modules. Learn more at https://reactjs.org/link/profiling");
-    var fakeCallbackNode = {
-    }; // Except for NoPriority, these correspond to Scheduler priorities. We use
+    var fakeCallbackNode = {}; // Except for NoPriority, these correspond to Scheduler priorities. We use
     // ascending numbers so we can compare them like numbers. They start at 90 to
     // avoid clashing with Scheduler's priorities.
     var ImmediatePriority$1 = 99;
@@ -11246,8 +11150,7 @@ module.exports = require('./cjs/react-dom.development.js');
     var IdlePriority$1 = 95; // NoPriority is the absence of priority. Also React-only.
     var NoPriority$1 = 90;
     var shouldYield = Scheduler_shouldYield;
-    var requestPaint = Scheduler_requestPaint !== undefined ? Scheduler_requestPaint : function() {
-    };
+    var requestPaint = Scheduler_requestPaint !== undefined ? Scheduler_requestPaint : function() {};
     var syncQueue = null;
     var immediateQueueCallbackNode = null;
     var isFlushingSyncQueue = false;
@@ -11367,16 +11270,11 @@ module.exports = require('./cjs/react-dom.development.js');
         return ReactCurrentBatchConfig.transition;
     }
     var ReactStrictModeWarnings = {
-        recordUnsafeLifecycleWarnings: function(fiber, instance) {
-        },
-        flushPendingUnsafeLifecycleWarnings: function() {
-        },
-        recordLegacyContextWarning: function(fiber, instance) {
-        },
-        flushLegacyContextWarning: function() {
-        },
-        discardPendingWarnings: function() {
-        }
+        recordUnsafeLifecycleWarnings: function(fiber, instance) {},
+        flushPendingUnsafeLifecycleWarnings: function() {},
+        recordLegacyContextWarning: function(fiber, instance) {},
+        flushLegacyContextWarning: function() {},
+        discardPendingWarnings: function() {}
     };
     var findStrictRoot = function(fiber) {
         var maybeStrictRoot = null;
@@ -11535,8 +11433,7 @@ module.exports = require('./cjs/react-dom.development.js');
     function resolveDefaultProps(Component, baseProps) {
         if (Component && Component.defaultProps) {
             // Resolve default props. Taken from ReactElement
-            var props = _assign({
-            }, baseProps);
+            var props = _assign({}, baseProps);
             var defaultProps = Component.defaultProps;
             for(var propName in defaultProps)if (props[propName] === undefined) props[propName] = defaultProps[propName];
             return props;
@@ -11550,8 +11447,7 @@ module.exports = require('./cjs/react-dom.development.js');
     var valueCursor = createCursor(null);
     var rendererSigil;
     // Use this to detect multiple renderers using the same context
-    rendererSigil = {
-    };
+    rendererSigil = {};
     var currentlyRenderingFiber = null;
     var lastContextDependency = null;
     var lastContextWithAllBitsObserved = null;
@@ -11881,8 +11777,7 @@ module.exports = require('./cjs/react-dom.development.js');
                 if (partialState === null || partialState === undefined) // Null and undefined are treated as no-ops.
                 return prevState;
                  // Merge the partial state and the previous state.
-                return _assign({
-                }, prevState, partialState);
+                return _assign({}, prevState, partialState);
             case ForceUpdate:
                 hasForceUpdate = true;
                 return prevState;
@@ -12035,8 +11930,7 @@ module.exports = require('./cjs/react-dom.development.js');
             }
         }
     }
-    var fakeInternalInstance = {
-    };
+    var fakeInternalInstance = {};
     var isArray1 = Array.isArray; // React.Component uses a shared frozen object by default.
     // We'll use it to determine whether we need to initialize legacy refs.
     var emptyRefsObject = new React.Component().refs;
@@ -12100,8 +11994,7 @@ module.exports = require('./cjs/react-dom.development.js');
         }
         var partialState = getDerivedStateFromProps(nextProps, prevState);
         warnOnUndefinedDerivedState(ctor, partialState);
-        var memoizedState = partialState === null || partialState === undefined ? prevState : _assign({
-        }, prevState, partialState);
+        var memoizedState = partialState === null || partialState === undefined ? prevState : _assign({}, prevState, partialState);
         workInProgress.memoizedState = memoizedState; // Once the update queue is empty, persist the derived state onto the
         // base state.
         if (workInProgress.lanes === NoLanes) {
@@ -12482,20 +12375,16 @@ module.exports = require('./cjs/react-dom.development.js');
     var didWarnAboutStringRefs;
     var ownerHasKeyUseWarning;
     var ownerHasFunctionTypeWarning;
-    var warnForMissingKey = function(child, returnFiber) {
-    };
+    var warnForMissingKey = function(child, returnFiber) {};
     didWarnAboutMaps = false;
     didWarnAboutGenerators = false;
-    didWarnAboutStringRefs = {
-    };
+    didWarnAboutStringRefs = {};
     /**
    * Warn if there's no key explicitly set on dynamic arrays of children or
    * object keys are not valid. This allows us to keep track of children between
    * updates.
-   */ ownerHasKeyUseWarning = {
-    };
-    ownerHasFunctionTypeWarning = {
-    };
+   */ ownerHasKeyUseWarning = {};
+    ownerHasFunctionTypeWarning = {};
     warnForMissingKey = function(child, returnFiber) {
         if (child === null || typeof child !== 'object') return;
         if (!child._store || child._store.validated || child.key != null) return;
@@ -12504,7 +12393,7 @@ module.exports = require('./cjs/react-dom.development.js');
         var componentName = getComponentName(returnFiber.type) || 'Component';
         if (ownerHasKeyUseWarning[componentName]) return;
         ownerHasKeyUseWarning[componentName] = true;
-        error1("Each child in a list should have a unique \"key\" prop. See https://reactjs.org/link/warning-keys for more information.");
+        error1('Each child in a list should have a unique "key" prop. See https://reactjs.org/link/warning-keys for more information.');
     };
     var isArray$1 = Array.isArray;
     function coerceRef(returnFiber, current, element) {
@@ -12517,7 +12406,7 @@ module.exports = require('./cjs/react-dom.development.js');
             !(element._owner && element._self && element._owner.stateNode !== element._self)) {
                 var componentName = getComponentName(returnFiber.type) || 'Component';
                 if (!didWarnAboutStringRefs[componentName]) {
-                    error1("A string ref, \"%s\", has been found within a strict mode tree. String refs are a source of potential bugs and should be avoided. We recommend using useRef() or createRef() instead. Learn more about using refs safely here: https://reactjs.org/link/strict-mode-string-ref", mixedRef);
+                    error1('A string ref, "%s", has been found within a strict mode tree. String refs are a source of potential bugs and should be avoided. We recommend using useRef() or createRef() instead. Learn more about using refs safely here: https://reactjs.org/link/strict-mode-string-ref', mixedRef);
                     didWarnAboutStringRefs[componentName] = true;
                 }
             }
@@ -12535,8 +12424,7 @@ module.exports = require('./cjs/react-dom.development.js');
                 var ref = function(value) {
                     var refs = inst.refs;
                     if (refs === emptyRefsObject) // This is a lazy pooled frozen object, so we need to initialize.
-                    refs = inst.refs = {
-                    };
+                    refs = inst.refs = {};
                     if (value === null) delete refs[stringRef];
                     else refs[stringRef] = value;
                 };
@@ -12798,7 +12686,7 @@ module.exports = require('./cjs/react-dom.development.js');
                         knownKeys.add(key);
                         break;
                     }
-                    error1("Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.", key);
+                    error1("Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted \u2014 the behavior is unsupported and could change in a future version.", key);
                     break;
             }
             return knownKeys;
@@ -13154,8 +13042,7 @@ module.exports = require('./cjs/react-dom.development.js');
             child = child.sibling;
         }
     }
-    var NO_CONTEXT = {
-    };
+    var NO_CONTEXT = {};
     var contextStackCursor$1 = createCursor(NO_CONTEXT);
     var contextFiberStackCursor = createCursor(NO_CONTEXT);
     var rootInstanceStackCursor = createCursor(NO_CONTEXT);
@@ -13506,8 +13393,7 @@ module.exports = require('./cjs/react-dom.development.js');
     var workInProgressSources = [];
     var rendererSigil$1;
     // Used to detect multiple renderers using the same mutable source.
-    rendererSigil$1 = {
-    };
+    rendererSigil$1 = {};
     function markSourceAsDirty(mutableSource) {
         workInProgressSources.push(mutableSource);
     }
@@ -13532,8 +13418,7 @@ module.exports = require('./cjs/react-dom.development.js');
     var ReactCurrentDispatcher$1 = ReactSharedInternals.ReactCurrentDispatcher, ReactCurrentBatchConfig$1 = ReactSharedInternals.ReactCurrentBatchConfig;
     var didWarnAboutMismatchedHooksForComponent;
     var didWarnAboutUseOpaqueIdentifier;
-    didWarnAboutUseOpaqueIdentifier = {
-    };
+    didWarnAboutUseOpaqueIdentifier = {};
     didWarnAboutMismatchedHooksForComponent = new Set();
     // These are set right before calling the component.
     var renderLanes1 = NoLanes; // The work-in-progress fiber. I've named it differently to distinguish it from
@@ -14467,8 +14352,7 @@ module.exports = require('./cjs/react-dom.development.js');
                         // if the component re-renders for a different reason and by that
                         // time the reducer has changed.
                         return;
-                    } catch (error) {
-                    } finally{
+                    } catch (error) {} finally{
                         ReactCurrentDispatcher$1.current = prevDispatcher;
                     }
                 }
@@ -15264,21 +15148,14 @@ module.exports = require('./cjs/react-dom.development.js');
     var didWarnAboutReassigningProps;
     var didWarnAboutRevealOrder;
     var didWarnAboutTailOptions;
-    didWarnAboutBadClass = {
-    };
-    didWarnAboutModulePatternComponent = {
-    };
-    didWarnAboutContextTypeOnFunctionComponent = {
-    };
-    didWarnAboutGetDerivedStateOnFunctionComponent = {
-    };
-    didWarnAboutFunctionRefs = {
-    };
+    didWarnAboutBadClass = {};
+    didWarnAboutModulePatternComponent = {};
+    didWarnAboutContextTypeOnFunctionComponent = {};
+    didWarnAboutGetDerivedStateOnFunctionComponent = {};
+    didWarnAboutFunctionRefs = {};
     didWarnAboutReassigningProps = false;
-    didWarnAboutRevealOrder = {
-    };
-    didWarnAboutTailOptions = {
-    };
+    didWarnAboutRevealOrder = {};
+    didWarnAboutTailOptions = {};
     function reconcileChildren(current, workInProgress, nextChildren, renderLanes) {
         if (current === null) // If this is a fresh new component that hasn't been rendered yet, we
         // won't update its child set by applying minimal side-effects. Instead,
@@ -16226,27 +16103,27 @@ module.exports = require('./cjs/react-dom.development.js');
                 case 'together':
                 case 'forwards':
                 case 'backwards':
-                    error1("\"%s\" is not a valid value for revealOrder on <SuspenseList />. Use lowercase \"%s\" instead.", revealOrder, revealOrder.toLowerCase());
+                    error1('"%s" is not a valid value for revealOrder on <SuspenseList />. Use lowercase "%s" instead.', revealOrder, revealOrder.toLowerCase());
                     break;
                 case 'forward':
                 case 'backward':
-                    error1("\"%s\" is not a valid value for revealOrder on <SuspenseList />. React uses the -s suffix in the spelling. Use \"%ss\" instead.", revealOrder, revealOrder.toLowerCase());
+                    error1('"%s" is not a valid value for revealOrder on <SuspenseList />. React uses the -s suffix in the spelling. Use "%ss" instead.', revealOrder, revealOrder.toLowerCase());
                     break;
                 default:
-                    error1("\"%s\" is not a supported revealOrder on <SuspenseList />. Did you mean \"together\", \"forwards\" or \"backwards\"?", revealOrder);
+                    error1('"%s" is not a supported revealOrder on <SuspenseList />. Did you mean "together", "forwards" or "backwards"?', revealOrder);
                     break;
             }
-            else error1("%s is not a supported value for revealOrder on <SuspenseList />. Did you mean \"together\", \"forwards\" or \"backwards\"?", revealOrder);
+            else error1('%s is not a supported value for revealOrder on <SuspenseList />. Did you mean "together", "forwards" or "backwards"?', revealOrder);
         }
     }
     function validateTailOptions(tailMode, revealOrder) {
         if (tailMode !== undefined && !didWarnAboutTailOptions[tailMode]) {
             if (tailMode !== 'collapsed' && tailMode !== 'hidden') {
                 didWarnAboutTailOptions[tailMode] = true;
-                error1("\"%s\" is not a supported value for tail on <SuspenseList />. Did you mean \"collapsed\" or \"hidden\"?", tailMode);
+                error1('"%s" is not a supported value for tail on <SuspenseList />. Did you mean "collapsed" or "hidden"?', tailMode);
             } else if (revealOrder !== 'forwards' && revealOrder !== 'backwards') {
                 didWarnAboutTailOptions[tailMode] = true;
-                error1("<SuspenseList tail=\"%s\" /> is only valid if revealOrder is \"forwards\" or \"backwards\". Did you mean to specify revealOrder=\"forwards\"?", tailMode);
+                error1('<SuspenseList tail="%s" /> is only valid if revealOrder is "forwards" or "backwards". Did you mean to specify revealOrder="forwards"?', tailMode);
             }
         }
     }
@@ -16277,7 +16154,7 @@ module.exports = require('./cjs/react-dom.development.js');
                             _i++;
                         }
                     }
-                } else error1("A single row was passed to a <SuspenseList revealOrder=\"%s\" />. This is not useful since it needs multiple rows. Did you mean to pass multiple children or an array?", revealOrder);
+                } else error1('A single row was passed to a <SuspenseList revealOrder="%s" />. This is not useful since it needs multiple rows. Did you mean to pass multiple children or an array?', revealOrder);
             }
         }
     }
@@ -16740,8 +16617,7 @@ module.exports = require('./cjs/react-dom.development.js');
             node = node.sibling;
         }
     };
-    updateHostContainer = function(workInProgress) {
-    };
+    updateHostContainer = function(workInProgress) {};
     updateHostComponent$1 = function(current, workInProgress, type, newProps, rootContainerInstance) {
         // If we have an alternate, that means this is an update and we need to
         // schedule a side-effect to do the updates.
@@ -20180,8 +20056,7 @@ module.exports = require('./cjs/react-dom.development.js');
     var hasBadMapPolyfill;
     hasBadMapPolyfill = false;
     try {
-        var nonExtensibleObject = Object.preventExtensions({
-        });
+        var nonExtensibleObject = Object.preventExtensions({});
         /* eslint-disable no-new */ new Map([
             [
                 nonExtensibleObject,
@@ -20682,8 +20557,7 @@ module.exports = require('./cjs/react-dom.development.js');
     var didWarnAboutNestedUpdates;
     var didWarnAboutFindNodeInStrictMode;
     didWarnAboutNestedUpdates = false;
-    didWarnAboutFindNodeInStrictMode = {
-    };
+    didWarnAboutFindNodeInStrictMode = {};
     function getContextForSubtree(parentComponent) {
         if (!parentComponent) return emptyContextObject;
         var fiber = get1(parentComponent);
@@ -20831,8 +20705,7 @@ module.exports = require('./cjs/react-dom.development.js');
     var setSuspenseHandler = null;
     var copyWithDeleteImpl = function(obj, path, index) {
         var key = path[index];
-        var updated = Array.isArray(obj) ? obj.slice() : _assign({
-        }, obj);
+        var updated = Array.isArray(obj) ? obj.slice() : _assign({}, obj);
         if (index + 1 === path.length) {
             if (Array.isArray(updated)) updated.splice(key, 1);
             else delete updated[key];
@@ -20846,8 +20719,7 @@ module.exports = require('./cjs/react-dom.development.js');
     };
     var copyWithRenameImpl = function(obj, oldPath, newPath, index) {
         var oldKey = oldPath[index];
-        var updated = Array.isArray(obj) ? obj.slice() : _assign({
-        }, obj);
+        var updated = Array.isArray(obj) ? obj.slice() : _assign({}, obj);
         if (index + 1 === oldPath.length) {
             var newKey = newPath[index]; // $FlowFixMe number or string is fine here
             updated[newKey] = updated[oldKey];
@@ -20872,8 +20744,7 @@ module.exports = require('./cjs/react-dom.development.js');
     var copyWithSetImpl = function(obj, path, index, value) {
         if (index >= path.length) return value;
         var key = path[index];
-        var updated = Array.isArray(obj) ? obj.slice() : _assign({
-        }, obj); // $FlowFixMe number or string is fine here
+        var updated = Array.isArray(obj) ? obj.slice() : _assign({}, obj); // $FlowFixMe number or string is fine here
         updated[key] = copyWithSetImpl(obj[key], path, index + 1, value);
         return updated;
     };
@@ -20900,8 +20771,7 @@ module.exports = require('./cjs/react-dom.development.js');
             // (There's no appropriate action type for DevTools overrides.)
             // As a result though, React will see the scheduled update as a noop and bailout.
             // Shallow cloning props works as a workaround for now to bypass the bailout check.
-            fiber.memoizedProps = _assign({
-            }, fiber.memoizedProps);
+            fiber.memoizedProps = _assign({}, fiber.memoizedProps);
             scheduleUpdateOnFiber(fiber, SyncLane, NoTimestamp);
         }
     };
@@ -20915,8 +20785,7 @@ module.exports = require('./cjs/react-dom.development.js');
             // (There's no appropriate action type for DevTools overrides.)
             // As a result though, React will see the scheduled update as a noop and bailout.
             // Shallow cloning props works as a workaround for now to bypass the bailout check.
-            fiber.memoizedProps = _assign({
-            }, fiber.memoizedProps);
+            fiber.memoizedProps = _assign({}, fiber.memoizedProps);
             scheduleUpdateOnFiber(fiber, SyncLane, NoTimestamp);
         }
     };
@@ -20930,8 +20799,7 @@ module.exports = require('./cjs/react-dom.development.js');
             // (There's no appropriate action type for DevTools overrides.)
             // As a result though, React will see the scheduled update as a noop and bailout.
             // Shallow cloning props works as a workaround for now to bypass the bailout check.
-            fiber.memoizedProps = _assign({
-            }, fiber.memoizedProps);
+            fiber.memoizedProps = _assign({}, fiber.memoizedProps);
             scheduleUpdateOnFiber(fiber, SyncLane, NoTimestamp);
         }
     }; // Support DevTools props for function components, forwardRef, memo, host components, etc.
@@ -21200,7 +21068,7 @@ module.exports = require('./cjs/react-dom.development.js');
         var key = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : null;
         if (!didWarnAboutUnstableCreatePortal) {
             didWarnAboutUnstableCreatePortal = true;
-            warn("The ReactDOM.unstable_createPortal() alias has been deprecated, and will be removed in React 18+. Update your code to use ReactDOM.createPortal() instead. It has the exact same API, but without the \"unstable_\" prefix.");
+            warn('The ReactDOM.unstable_createPortal() alias has been deprecated, and will be removed in React 18+. Update your code to use ReactDOM.createPortal() instead. It has the exact same API, but without the "unstable_" prefix.');
         }
         return createPortal$1(children, container, key);
     }
@@ -21311,8 +21179,7 @@ module.exports = require('./cjs/scheduler.development.js');
         exports.unstable_shouldYield = function() {
             return false;
         };
-        requestPaint = exports.unstable_forceFrameRate = function() {
-        };
+        requestPaint = exports.unstable_forceFrameRate = function() {};
     } else {
         // Capture local references to native APIs, in case a polyfill overrides them.
         var _setTimeout = window.setTimeout;
@@ -21341,8 +21208,7 @@ module.exports = require('./cjs/scheduler.development.js');
         exports.unstable_shouldYield = function() {
             return exports.unstable_now() >= deadline;
         }; // Since we yield every frame regardless, `requestPaint` has no effect.
-        requestPaint = function() {
-        };
+        requestPaint = function() {};
         exports.unstable_forceFrameRate = function(fps) {
             if (fps < 0 || fps > 125) {
                 // Using console['error'] to evade Babel and ESLint
@@ -21468,8 +21334,7 @@ module.exports = require('./cjs/scheduler.development.js');
     var NormalPriority = 3;
     var LowPriority = 4;
     var IdlePriority = 5;
-    function markTaskErrored(task, ms) {
-    }
+    function markTaskErrored(task, ms) {}
     /* eslint-disable no-var */ // Math.pow(2, 30) - 1
     // 0b111111111111111111111111111111
     var maxSigned31BitInt = 1073741823; // Times out immediately
@@ -21682,8 +21547,7 @@ module.exports = require('./cjs/scheduler.development.js');
         }
         return newTask;
     }
-    function unstable_pauseExecution() {
-    }
+    function unstable_pauseExecution() {}
     function unstable_continueExecution() {
         if (!isHostCallbackScheduled && !isPerformingWork) {
             isHostCallbackScheduled = true;
@@ -21993,10 +21857,9 @@ exports["default"] = void 0;
 var _Routes = _interopRequireDefault(require("./routes/Routes"));
 var _jsxRuntime = require("react/jsx-runtime");
 var App = function App() {
-    return(/*#__PURE__*/ (0, _jsxRuntime.jsx)(_jsxRuntime.Fragment, {
-        children: /*#__PURE__*/ (0, _jsxRuntime.jsx)(_Routes["default"], {
-        })
-    }));
+    return /*#__PURE__*/ (0, _jsxRuntime.jsx)(_jsxRuntime.Fragment, {
+        children: /*#__PURE__*/ (0, _jsxRuntime.jsx)(_Routes["default"], {})
+    });
 };
 _c = App;
 var _default = App;
@@ -22029,28 +21892,30 @@ var _Home = _interopRequireDefault(require("../pages/Home"));
 var _NoMatch = _interopRequireDefault(require("../pages/NoMatch"));
 var _jsxRuntime = require("react/jsx-runtime");
 var Routes = function Routes() {
-    return(/*#__PURE__*/ (0, _jsxRuntime.jsxs)(_reactRouterDom.BrowserRouter, {
+    return /*#__PURE__*/ (0, _jsxRuntime.jsxs)(_reactRouterDom.BrowserRouter, {
         children: [
-            /*#__PURE__*/ (0, _jsxRuntime.jsx)(_Navbar["default"], {
-            }),
+            /*#__PURE__*/ (0, _jsxRuntime.jsx)(_Navbar["default"], {}),
             /*#__PURE__*/ (0, _jsxRuntime.jsxs)(_reactRouterDom.Switch, {
                 children: [
                     /*#__PURE__*/ (0, _jsxRuntime.jsx)(_reactRouterDom.Route, {
                         exact: true,
+                        path: "/",
+                        children: /*#__PURE__*/ (0, _jsxRuntime.jsx)(_Home["default"], {})
+                    }),
+                    /*#__PURE__*/ (0, _jsxRuntime.jsx)(_reactRouterDom.Route, {
+                        exact: true,
                         path: "/movies",
-                        children: /*#__PURE__*/ (0, _jsxRuntime.jsx)(_Search["default"], {
-                        })
+                        children: /*#__PURE__*/ (0, _jsxRuntime.jsx)(_Search["default"], {})
                     }),
                     /*#__PURE__*/ (0, _jsxRuntime.jsx)(_reactRouterDom.Route, {
                         exact: true,
                         path: "*",
-                        children: /*#__PURE__*/ (0, _jsxRuntime.jsx)(_NoMatch["default"], {
-                        })
+                        children: /*#__PURE__*/ (0, _jsxRuntime.jsx)(_NoMatch["default"], {})
                     })
                 ]
             })
         ]
-    }));
+    });
 };
 _c = Routes;
 var _default = Routes;
@@ -22133,10 +21998,10 @@ var _tinyInvariantDefault = parcelHelpers.interopDefault(_tinyInvariant);
     }
     var _proto = BrowserRouter1.prototype;
     _proto.render = function render() {
-        return(/*#__PURE__*/ _reactDefault.default.createElement(_reactRouter.Router, {
+        return /*#__PURE__*/ _reactDefault.default.createElement(_reactRouter.Router, {
             history: this.history,
             children: this.props.children
-        }));
+        });
     };
     return BrowserRouter1;
 }(_reactDefault.default.Component);
@@ -22165,10 +22030,10 @@ BrowserRouter.prototype.componentDidMount = function() {
     }
     var _proto = HashRouter1.prototype;
     _proto.render = function render() {
-        return(/*#__PURE__*/ _reactDefault.default.createElement(_reactRouter.Router, {
+        return /*#__PURE__*/ _reactDefault.default.createElement(_reactRouter.Router, {
             history: this.history,
             children: this.props.children
-        }));
+        });
     };
     return HashRouter1;
 }(_reactDefault.default.Component);
@@ -22206,8 +22071,7 @@ var LinkAnchor = forwardRef(function(_ref, forwardedRef) {
         "onClick"
     ]);
     var target = rest.target;
-    var props = _extendsDefault.default({
-    }, rest, {
+    var props = _extendsDefault.default({}, rest, {
         onClick: function onClick(event) {
             try {
                 if (_onClick) _onClick(event);
@@ -22224,7 +22088,7 @@ var LinkAnchor = forwardRef(function(_ref, forwardedRef) {
     }); // React 15 compat
     if (forwardRefShim !== forwardRef) props.ref = forwardedRef || innerRef;
     else props.ref = innerRef;
-    /* eslint-disable-next-line jsx-a11y/anchor-has-content */ return(/*#__PURE__*/ _reactDefault.default.createElement("a", props));
+    /* eslint-disable-next-line jsx-a11y/anchor-has-content */ return /*#__PURE__*/ _reactDefault.default.createElement("a", props);
 });
 LinkAnchor.displayName = "LinkAnchor";
 /**
@@ -22236,13 +22100,12 @@ LinkAnchor.displayName = "LinkAnchor";
         "to",
         "innerRef"
     ]);
-    return(/*#__PURE__*/ _reactDefault.default.createElement(_reactRouter.__RouterContext.Consumer, null, function(context) {
+    return /*#__PURE__*/ _reactDefault.default.createElement(_reactRouter.__RouterContext.Consumer, null, function(context) {
         !context && _tinyInvariantDefault.default(false, "You should not use <Link> outside a <Router>");
         var history = context.history;
         var location1 = normalizeToLocation(resolveToLocation(to, context.location), context.location);
         var href = location1 ? history.createHref(location1) : "";
-        var props = _extendsDefault.default({
-        }, rest, {
+        var props = _extendsDefault.default({}, rest, {
             href: href,
             navigate: function navigate() {
                 var location = resolveToLocation(to, context.location);
@@ -22253,8 +22116,8 @@ LinkAnchor.displayName = "LinkAnchor";
         }); // React 15 compat
         if (forwardRefShim !== forwardRef) props.ref = forwardedRef || innerRef;
         else props.innerRef = innerRef;
-        return(/*#__PURE__*/ _reactDefault.default.createElement(component, props));
-    }));
+        return /*#__PURE__*/ _reactDefault.default.createElement(component, props);
+    });
 });
 var toType = _propTypesDefault.default.oneOfType([
     _propTypesDefault.default.string,
@@ -22304,7 +22167,7 @@ function joinClassnames() {
         "to",
         "innerRef"
     ]);
-    return(/*#__PURE__*/ _reactDefault.default.createElement(_reactRouter.__RouterContext.Consumer, null, function(context) {
+    return /*#__PURE__*/ _reactDefault.default.createElement(_reactRouter.__RouterContext.Consumer, null, function(context) {
         !context && _tinyInvariantDefault.default(false, "You should not use <NavLink> outside a <Router>");
         var currentLocation = locationProp || context.location;
         var toLocation = normalizeToLocation(resolveToLocation(to, currentLocation), currentLocation);
@@ -22321,8 +22184,7 @@ function joinClassnames() {
         var style = typeof styleProp === "function" ? styleProp(isActive) : styleProp;
         if (isActive) {
             className = joinClassnames(className, activeClassName);
-            style = _extendsDefault.default({
-            }, style, activeStyle);
+            style = _extendsDefault.default({}, style, activeStyle);
         }
         var props = _extendsDefault.default({
             "aria-current": isActive && ariaCurrent || null,
@@ -22332,8 +22194,8 @@ function joinClassnames() {
         }, rest); // React 15 compat
         if (forwardRefShim$1 !== forwardRef$1) props.ref = forwardedRef || innerRef;
         else props.innerRef = innerRef;
-        return(/*#__PURE__*/ _reactDefault.default.createElement(Link, props));
-    }));
+        return /*#__PURE__*/ _reactDefault.default.createElement(Link, props);
+    });
 });
 NavLink.displayName = "NavLink";
 var ariaCurrentType = _propTypesDefault.default.oneOf([
@@ -22345,8 +22207,7 @@ var ariaCurrentType = _propTypesDefault.default.oneOf([
     "true",
     "false"
 ]);
-NavLink.propTypes = _extendsDefault.default({
-}, Link.propTypes, {
+NavLink.propTypes = _extendsDefault.default({}, Link.propTypes, {
     "aria-current": ariaCurrentType,
     activeClassName: _propTypesDefault.default.string,
     activeStyle: _propTypesDefault.default.object,
@@ -22438,8 +22299,7 @@ var context = /*#__PURE__*/ createNamedContext("Router");
         return {
             path: "/",
             url: "/",
-            params: {
-            },
+            params: {},
             isExact: pathname === "/"
         };
     };
@@ -22478,7 +22338,7 @@ var context = /*#__PURE__*/ createNamedContext("Router");
         }
     };
     _proto.render = function render() {
-        return(/*#__PURE__*/ _reactDefault.default.createElement(context.Provider, {
+        return /*#__PURE__*/ _reactDefault.default.createElement(context.Provider, {
             value: {
                 history: this.props.history,
                 location: this.state.location,
@@ -22488,7 +22348,7 @@ var context = /*#__PURE__*/ createNamedContext("Router");
         }, /*#__PURE__*/ _reactDefault.default.createElement(historyContext.Provider, {
             children: this.props.children || null,
             value: this.props.history
-        })));
+        }));
     };
     return Router1;
 }(_reactDefault.default.Component);
@@ -22515,10 +22375,10 @@ Router.prototype.componentDidUpdate = function(prevProps) {
     }
     var _proto = MemoryRouter1.prototype;
     _proto.render = function render() {
-        return(/*#__PURE__*/ _reactDefault.default.createElement(Router, {
+        return /*#__PURE__*/ _reactDefault.default.createElement(Router, {
             history: this.history,
             children: this.props.children
-        }));
+        });
     };
     return MemoryRouter1;
 }(_reactDefault.default.Component);
@@ -22556,11 +22416,11 @@ var Lifecycle = /*#__PURE__*/ function(_React$Component) {
  * The public API for prompting the user before navigating away from a screen.
  */ function Prompt(_ref) {
     var message = _ref.message, _ref$when = _ref.when, when = _ref$when === void 0 ? true : _ref$when;
-    return(/*#__PURE__*/ _reactDefault.default.createElement(context.Consumer, null, function(context2) {
+    return /*#__PURE__*/ _reactDefault.default.createElement(context.Consumer, null, function(context2) {
         !context2 && _tinyInvariantDefault.default(false, "You should not use <Prompt> outside a <Router>");
         if (!when || context2.staticContext) return null;
         var method = context2.history.block;
-        return(/*#__PURE__*/ _reactDefault.default.createElement(Lifecycle, {
+        return /*#__PURE__*/ _reactDefault.default.createElement(Lifecycle, {
             onMount: function onMount(self) {
                 self.release = method(message);
             },
@@ -22574,8 +22434,8 @@ var Lifecycle = /*#__PURE__*/ function(_React$Component) {
                 self.release();
             },
             message: message
-        }));
-    }));
+        });
+    });
 }
 var messageType = _propTypesDefault.default.oneOfType([
     _propTypesDefault.default.func,
@@ -22585,8 +22445,7 @@ Prompt.propTypes = {
     when: _propTypesDefault.default.bool,
     message: messageType.isRequired
 };
-var cache = {
-};
+var cache = {};
 var cacheLimit = 10000;
 var cacheCount = 0;
 function compilePath(path) {
@@ -22602,8 +22461,7 @@ function compilePath(path) {
  * Public API for generating a URL pathname from a path and parameters.
  */ function generatePath(path, params) {
     if (path === void 0) path = "/";
-    if (params === void 0) params = {
-    };
+    if (params === void 0) params = {};
     return path === "/" ? path : compilePath(path)(params, {
         pretty: true
     });
@@ -22612,12 +22470,11 @@ function compilePath(path) {
  * The public API for navigating programmatically with a component.
  */ function Redirect(_ref) {
     var computedMatch = _ref.computedMatch, to = _ref.to, _ref$push = _ref.push, push = _ref$push === void 0 ? false : _ref$push;
-    return(/*#__PURE__*/ _reactDefault.default.createElement(context.Consumer, null, function(context3) {
+    return /*#__PURE__*/ _reactDefault.default.createElement(context.Consumer, null, function(context3) {
         !context3 && _tinyInvariantDefault.default(false, "You should not use <Redirect> outside a <Router>");
         var history = context3.history, staticContext = context3.staticContext;
         var method = push ? history.push : history.replace;
-        var location = _history.createLocation(computedMatch ? typeof to === "string" ? generatePath(to, computedMatch.params) : _extendsDefault.default({
-        }, to, {
+        var location = _history.createLocation(computedMatch ? typeof to === "string" ? generatePath(to, computedMatch.params) : _extendsDefault.default({}, to, {
             pathname: generatePath(to.pathname, computedMatch.params)
         }) : to); // When rendering in a static context,
         // set the new location immediately.
@@ -22625,20 +22482,19 @@ function compilePath(path) {
             method(location);
             return null;
         }
-        return(/*#__PURE__*/ _reactDefault.default.createElement(Lifecycle, {
+        return /*#__PURE__*/ _reactDefault.default.createElement(Lifecycle, {
             onMount: function onMount() {
                 method(location);
             },
             onUpdate: function onUpdate(self, prevProps) {
                 var prevLocation = _history.createLocation(prevProps.to);
-                if (!_history.locationsAreEqual(prevLocation, _extendsDefault.default({
-                }, location, {
+                if (!_history.locationsAreEqual(prevLocation, _extendsDefault.default({}, location, {
                     key: prevLocation.key
                 }))) method(location);
             },
             to: to
-        }));
-    }));
+        });
+    });
 }
 Redirect.propTypes = {
     push: _propTypesDefault.default.bool,
@@ -22648,14 +22504,12 @@ Redirect.propTypes = {
         _propTypesDefault.default.object
     ]).isRequired
 };
-var cache$1 = {
-};
+var cache$1 = {};
 var cacheLimit$1 = 10000;
 var cacheCount$1 = 0;
 function compilePath$1(path, options) {
     var cacheKey = "" + options.end + options.strict + options.sensitive;
-    var pathCache = cache$1[cacheKey] || (cache$1[cacheKey] = {
-    });
+    var pathCache = cache$1[cacheKey] || (cache$1[cacheKey] = {});
     if (pathCache[path]) return pathCache[path];
     var keys = [];
     var regexp = _pathToRegexpDefault.default(path, keys, options);
@@ -22672,8 +22526,7 @@ function compilePath$1(path, options) {
 /**
  * Public API for matching a URL pathname to a path.
  */ function matchPath(pathname, options) {
-    if (options === void 0) options = {
-    };
+    if (options === void 0) options = {};
     if (typeof options === "string" || Array.isArray(options)) options = {
         path: options
     };
@@ -22699,11 +22552,10 @@ function compilePath$1(path, options) {
             // the matched portion of the URL
             isExact: isExact,
             // whether or not we matched exactly
-            params: keys.reduce(function(memo, key, index) {
-                memo[key.name] = values[index];
+            params: keys.reduce(function(memo, key1, index) {
+                memo[key1.name] = values[index];
                 return memo;
-            }, {
-            })
+            }, {})
         };
     }, null);
 }
@@ -22725,23 +22577,22 @@ function evalChildrenDev(children, props, path) {
     var _proto = Route1.prototype;
     _proto.render = function render1() {
         var _this = this;
-        return(/*#__PURE__*/ _reactDefault.default.createElement(context.Consumer, null, function(context$1) {
+        return /*#__PURE__*/ _reactDefault.default.createElement(context.Consumer, null, function(context$1) {
             !context$1 && _tinyInvariantDefault.default(false, "You should not use <Route> outside a <Router>");
             var location = _this.props.location || context$1.location;
             var match = _this.props.computedMatch ? _this.props.computedMatch // <Switch> already computed the match for us
              : _this.props.path ? matchPath(location.pathname, _this.props) : context$1.match;
-            var props = _extendsDefault.default({
-            }, context$1, {
+            var props = _extendsDefault.default({}, context$1, {
                 location: location,
                 match: match
             });
             var _this$props = _this.props, children = _this$props.children, component = _this$props.component, render = _this$props.render; // Preact uses an empty array as children by
             // default, so use null if that's the case.
             if (Array.isArray(children) && isEmptyChildren(children)) children = null;
-            return(/*#__PURE__*/ _reactDefault.default.createElement(context.Provider, {
+            return /*#__PURE__*/ _reactDefault.default.createElement(context.Provider, {
                 value: props
-            }, props.match ? children ? typeof children === "function" ? evalChildrenDev(children, props, _this.props.path) : children : component ? /*#__PURE__*/ _reactDefault.default.createElement(component, props) : render ? render(props) : null : typeof children === "function" ? evalChildrenDev(children, props, _this.props.path) : null));
-        }));
+            }, props.match ? children ? typeof children === "function" ? evalChildrenDev(children, props, _this.props.path) : children : component ? /*#__PURE__*/ _reactDefault.default.createElement(component, props) : render ? render(props) : null : typeof children === "function" ? evalChildrenDev(children, props, _this.props.path) : null);
+        });
     };
     return Route1;
 }(_reactDefault.default.Component);
@@ -22777,8 +22628,7 @@ function addLeadingSlash(path) {
 }
 function addBasename(basename, location) {
     if (!basename) return location;
-    return _extendsDefault.default({
-    }, location, {
+    return _extendsDefault.default({}, location, {
         pathname: addLeadingSlash(basename) + location.pathname
     });
 }
@@ -22786,8 +22636,7 @@ function stripBasename(basename, location) {
     if (!basename) return location;
     var base = addLeadingSlash(basename);
     if (location.pathname.indexOf(base) !== 0) return location;
-    return _extendsDefault.default({
-    }, location, {
+    return _extendsDefault.default({}, location, {
         pathname: location.pathname.substr(base.length)
     });
 }
@@ -22799,8 +22648,7 @@ function staticHandler(methodName) {
         _tinyInvariantDefault.default(false, "You cannot %s with <StaticRouter>", methodName);
     };
 }
-function noop() {
-}
+function noop() {}
 /**
  * The public top-level API for a "static" <Router>, so-called because it
  * can't actually change the current location. Instead, it just records
@@ -22830,15 +22678,13 @@ function noop() {
     }
     var _proto = StaticRouter1.prototype;
     _proto.navigateTo = function navigateTo(location, action) {
-        var _this$props = this.props, _this$props$basename = _this$props.basename, basename = _this$props$basename === void 0 ? "" : _this$props$basename, _this$props$context = _this$props.context, context4 = _this$props$context === void 0 ? {
-        } : _this$props$context;
+        var _this$props = this.props, _this$props$basename = _this$props.basename, basename = _this$props$basename === void 0 ? "" : _this$props$basename, _this$props$context = _this$props.context, context4 = _this$props$context === void 0 ? {} : _this$props$context;
         context4.action = action;
         context4.location = addBasename(basename, _history.createLocation(location));
         context4.url = createURL(context4.location);
     };
     _proto.render = function render() {
-        var _this$props2 = this.props, _this$props2$basename = _this$props2.basename, basename = _this$props2$basename === void 0 ? "" : _this$props2$basename, _this$props2$context = _this$props2.context, context5 = _this$props2$context === void 0 ? {
-        } : _this$props2$context, _this$props2$location = _this$props2.location, location = _this$props2$location === void 0 ? "/" : _this$props2$location, rest = _objectWithoutPropertiesLooseDefault.default(_this$props2, [
+        var _this$props2 = this.props, _this$props2$basename = _this$props2.basename, basename = _this$props2$basename === void 0 ? "" : _this$props2$basename, _this$props2$context = _this$props2.context, context5 = _this$props2$context === void 0 ? {} : _this$props2$context, _this$props2$location = _this$props2.location, location = _this$props2$location === void 0 ? "/" : _this$props2$location, rest = _objectWithoutPropertiesLooseDefault.default(_this$props2, [
             "basename",
             "context",
             "location"
@@ -22857,11 +22703,10 @@ function noop() {
             listen: this.handleListen,
             block: this.handleBlock
         };
-        return(/*#__PURE__*/ _reactDefault.default.createElement(Router, _extendsDefault.default({
-        }, rest, {
+        return /*#__PURE__*/ _reactDefault.default.createElement(Router, _extendsDefault.default({}, rest, {
             history: history,
             staticContext: context5
-        })));
+        }));
     };
     return StaticRouter1;
 }(_reactDefault.default.Component);
@@ -22886,7 +22731,7 @@ StaticRouter.prototype.componentDidMount = function() {
     var _proto = Switch1.prototype;
     _proto.render = function render() {
         var _this = this;
-        return(/*#__PURE__*/ _reactDefault.default.createElement(context.Consumer, null, function(context6) {
+        return /*#__PURE__*/ _reactDefault.default.createElement(context.Consumer, null, function(context6) {
             !context6 && _tinyInvariantDefault.default(false, "You should not use <Switch> outside a <Router>");
             var location = _this.props.location || context6.location;
             var element, match; // We use React.Children.forEach instead of React.Children.toArray().find()
@@ -22897,8 +22742,7 @@ StaticRouter.prototype.componentDidMount = function() {
                 if (match == null && /*#__PURE__*/ _reactDefault.default.isValidElement(child)) {
                     element = child;
                     var path = child.props.path || child.props.from;
-                    match = path ? matchPath(location.pathname, _extendsDefault.default({
-                    }, child.props, {
+                    match = path ? matchPath(location.pathname, _extendsDefault.default({}, child.props, {
                         path: path
                     })) : context6.match;
                 }
@@ -22907,7 +22751,7 @@ StaticRouter.prototype.componentDidMount = function() {
                 location: location,
                 computedMatch: match
             }) : null;
-        }));
+        });
     };
     return Switch1;
 }(_reactDefault.default.Component);
@@ -22927,13 +22771,12 @@ Switch.prototype.componentDidUpdate = function(prevProps) {
         var wrappedComponentRef = props.wrappedComponentRef, remainingProps = _objectWithoutPropertiesLooseDefault.default(props, [
             "wrappedComponentRef"
         ]);
-        return(/*#__PURE__*/ _reactDefault.default.createElement(context.Consumer, null, function(context7) {
+        return /*#__PURE__*/ _reactDefault.default.createElement(context.Consumer, null, function(context7) {
             !context7 && _tinyInvariantDefault.default(false, "You should not use <" + displayName + " /> outside a <Router>");
-            return(/*#__PURE__*/ _reactDefault.default.createElement(Component, _extendsDefault.default({
-            }, remainingProps, context7, {
+            return /*#__PURE__*/ _reactDefault.default.createElement(Component, _extendsDefault.default({}, remainingProps, context7, {
                 ref: wrappedComponentRef
-            })));
-        }));
+            }));
+        });
     };
     C.displayName = displayName;
     C.WrappedComponent = Component;
@@ -22958,8 +22801,7 @@ function useLocation() {
 function useParams() {
     !(typeof useContext === "function") && _tinyInvariantDefault.default(false, "You must use React >= 16.8 in order to use useParams()");
     var match = useContext(context).match;
-    return match ? match.params : {
-    };
+    return match ? match.params : {};
 }
 function useRouteMatch(path) {
     !(typeof useContext === "function") && _tinyInvariantDefault.default(false, "You must use React >= 16.8 in order to use useRouteMatch()");
@@ -23216,8 +23058,7 @@ var assign = require('object-assign');
 var ReactPropTypesSecret = require('./lib/ReactPropTypesSecret');
 var has = require('./lib/has');
 var checkPropTypes = require('./checkPropTypes');
-var printWarning = function() {
-};
+var printWarning = function() {};
 printWarning = function(text) {
     var message = 'Warning: ' + text;
     if (typeof console !== 'undefined') console.error(message);
@@ -23226,8 +23067,7 @@ printWarning = function(text) {
         // This error was thrown as a convenience so that you can use this stack
         // to find the callsite that caused this warning to fire.
         throw new Error(message);
-    } catch (x) {
-    }
+    } catch (x) {}
 };
 function emptyFunctionThatReturnsNull() {
     return null;
@@ -23340,15 +23180,13 @@ module.exports = function(isValidElement, throwOnDirectAccess) {
    * happens in oneOfType() for any type before the one that matched.
    */ function PropTypeError(message, data) {
         this.message = message;
-        this.data = data && typeof data === 'object' ? data : {
-        };
+        this.data = data && typeof data === 'object' ? data : {};
         this.stack = '';
     }
     // Make `instanceof Error` still work for returned errors.
     PropTypeError.prototype = Error.prototype;
     function createChainableTypeChecker(validate) {
-        var manualPropTypeCallCache = {
-        };
+        var manualPropTypeCallCache = {};
         var manualPropTypeWarningCount = 0;
         function checkType(isRequired, props, propName, componentName, location, propFullName, secret) {
             componentName = componentName || ANONYMOUS;
@@ -23543,8 +23381,7 @@ module.exports = function(isValidElement, throwOnDirectAccess) {
             var propType = getPropType(propValue);
             if (propType !== 'object') return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type `' + propType + '` ' + ('supplied to `' + componentName + '`, expected `object`.'));
             // We need to check all keys in case some are required but missing from props.
-            var allKeys = assign({
-            }, props[propName], shapeTypes);
+            var allKeys = assign({}, props[propName], shapeTypes);
             for(var key in allKeys){
                 var checker = shapeTypes[key];
                 if (has(shapeTypes, key) && typeof checker !== 'function') return invalidValidatorError(componentName, location, propFullName, key, getPreciseType(checker));
@@ -23667,11 +23504,9 @@ module.exports = Function.call.bind(Object.prototype.hasOwnProperty);
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  */ 'use strict';
-var printWarning = function() {
-};
+var printWarning = function() {};
 var ReactPropTypesSecret = require('./lib/ReactPropTypesSecret');
-var loggedTypeFailures = {
-};
+var loggedTypeFailures = {};
 var has = require('./lib/has');
 printWarning = function(text) {
     var message = 'Warning: ' + text;
@@ -23681,8 +23516,7 @@ printWarning = function(text) {
         // This error was thrown as a convenience so that you can use this stack
         // to find the callsite that caused this warning to fire.
         throw new Error(message);
-    } catch (x) {
-    }
+    } catch (x) {}
 };
 /**
  * Assert that the values match with the type specs.
@@ -23727,8 +23561,7 @@ printWarning = function(text) {
  *
  * @private
  */ checkPropTypes.resetWarningCache = function() {
-    loggedTypeFailures = {
-    };
+    loggedTypeFailures = {};
 };
 module.exports = checkPropTypes;
 
@@ -23809,8 +23642,7 @@ function createLocation(path, state, key, currentLocation) {
         location.state = state;
     } else {
         // One-arg form: push(location)
-        location = _extendsDefault.default({
-        }, path);
+        location = _extendsDefault.default({}, path);
         if (location.pathname === undefined) location.pathname = '';
         if (location.search) {
             if (location.search.charAt(0) !== '?') location.search = '?' + location.search;
@@ -23927,21 +23759,18 @@ var PopStateEvent = 'popstate';
 var HashChangeEvent = 'hashchange';
 function getHistoryState() {
     try {
-        return window.history.state || {
-        };
+        return window.history.state || {};
     } catch (e) {
         // IE 11 sometimes throws when accessing window.history.state
         // See https://github.com/ReactTraining/history/pull/289
-        return {
-        };
+        return {};
     }
 }
 /**
  * Creates a history object that uses the HTML5 history API including
  * pushState, replaceState, and the popstate event.
  */ function createBrowserHistory(props) {
-    if (props === void 0) props = {
-    };
+    if (props === void 0) props = {};
     !canUseDOM && _tinyInvariantDefault.default(false, 'Browser history needs a DOM');
     var globalHistory = window.history;
     var canUseHistory = supportsHistory();
@@ -23949,11 +23778,10 @@ function getHistoryState() {
     var _props = props, _props$forceRefresh = _props.forceRefresh, forceRefresh = _props$forceRefresh === void 0 ? false : _props$forceRefresh, _props$getUserConfirm = _props.getUserConfirmation, getUserConfirmation = _props$getUserConfirm === void 0 ? getConfirmation : _props$getUserConfirm, _props$keyLength = _props.keyLength, keyLength = _props$keyLength === void 0 ? 6 : _props$keyLength;
     var basename = props.basename ? stripTrailingSlash(addLeadingSlash(props.basename)) : '';
     function getDOMLocation(historyState) {
-        var _ref = historyState || {
-        }, key = _ref.key, state = _ref.state;
+        var _ref = historyState || {}, key = _ref.key, state = _ref.state;
         var _window$location = window.location, pathname = _window$location.pathname, search = _window$location.search, hash = _window$location.hash;
         var path = pathname + search + hash;
-        _tinyWarningDefault.default(!basename || hasBasename(path, basename), "You are attempting to use a basename on a page whose URL path does not begin with the basename. Expected path \"" + path + '" to begin with "' + basename + '".');
+        _tinyWarningDefault.default(!basename || hasBasename(path, basename), 'You are attempting to use a basename on a page whose URL path does not begin with the basename. Expected path "' + path + '" to begin with "' + basename + '".');
         if (basename) path = stripBasename(path, basename);
         return createLocation(path, state, key);
     }
@@ -24165,8 +23993,7 @@ function replaceHashPath(path) {
     window.location.replace(stripHash(window.location.href) + '#' + path);
 }
 function createHashHistory(props) {
-    if (props === void 0) props = {
-    };
+    if (props === void 0) props = {};
     !canUseDOM && _tinyInvariantDefault.default(false, 'Hash history needs a DOM');
     var globalHistory = window.history;
     var canGoWithoutReload = supportsGoWithoutReloadUsingHash();
@@ -24175,7 +24002,7 @@ function createHashHistory(props) {
     var _HashPathCoders$hashT = HashPathCoders[hashType], encodePath = _HashPathCoders$hashT.encodePath, decodePath = _HashPathCoders$hashT.decodePath;
     function getDOMLocation() {
         var path = decodePath(getHashPath());
-        _tinyWarningDefault.default(!basename || hasBasename(path, basename), "You are attempting to use a basename on a page whose URL path does not begin with the basename. Expected path \"" + path + '" to begin with "' + basename + '".');
+        _tinyWarningDefault.default(!basename || hasBasename(path, basename), 'You are attempting to use a basename on a page whose URL path does not begin with the basename. Expected path "' + path + '" to begin with "' + basename + '".');
         if (basename) path = stripBasename(path, basename);
         return createLocation(path);
     }
@@ -24360,8 +24187,7 @@ function clamp(n, lowerBound, upperBound) {
 /**
  * Creates a history object that stores locations in memory.
  */ function createMemoryHistory(props) {
-    if (props === void 0) props = {
-    };
+    if (props === void 0) props = {};
     var _props = props, getUserConfirmation = _props.getUserConfirmation, _props$initialEntries = _props.initialEntries, initialEntries = _props$initialEntries === void 0 ? [
         '/'
     ] : _props$initialEntries, _props$initialIndex = _props.initialIndex, initialIndex = _props$initialIndex === void 0 ? 0 : _props$initialIndex, _props$keyLength = _props.keyLength, keyLength = _props$keyLength === void 0 ? 6 : _props$keyLength;
@@ -24547,8 +24373,7 @@ function valueEqual(a, b) {
         var aValue = valueOf(a);
         var bValue = valueOf(b);
         if (aValue !== a || bValue !== b) return valueEqual(aValue, bValue);
-        return Object.keys(Object.assign({
-        }, a, b)).every(function(key) {
+        return Object.keys(Object.assign({}, a, b)).every(function(key) {
             return valueEqual(a[key], b[key]);
         });
     }
@@ -24567,8 +24392,7 @@ function warning(condition, message) {
         if (typeof console !== 'undefined') console.warn(text);
         try {
             throw Error(text);
-        } catch (x) {
-        }
+        } catch (x) {}
     }
 }
 exports.default = warning;
@@ -24601,8 +24425,7 @@ var _tinyWarning = require("tiny-warning");
 var _tinyWarningDefault = parcelHelpers.interopDefault(_tinyWarning);
 var global = arguments[3];
 var MAX_SIGNED_31_BIT_INT = 1073741823;
-var commonjsGlobal = typeof globalThis !== 'undefined' ? globalThis : typeof window !== 'undefined' ? window : typeof global !== 'undefined' ? global : {
-};
+var commonjsGlobal = typeof globalThis !== 'undefined' ? globalThis : typeof window !== 'undefined' ? window : typeof global !== 'undefined' ? global : {};
 function getUniqueId() {
     var key = '__global_unique_id__';
     return commonjsGlobal[key] = (commonjsGlobal[key] || 0) + 1;
@@ -24650,8 +24473,7 @@ function createReactContext(defaultValue, calculateChangedBits) {
         var _proto = Provider.prototype;
         _proto.getChildContext = function getChildContext() {
             var _ref;
-            return _ref = {
-            }, _ref[contextProp] = this.emitter, _ref;
+            return _ref = {}, _ref[contextProp] = this.emitter, _ref;
         };
         _proto.componentWillReceiveProps = function componentWillReceiveProps(nextProps) {
             if (this.props.value !== nextProps.value) {
@@ -24672,8 +24494,7 @@ function createReactContext(defaultValue, calculateChangedBits) {
         };
         return Provider;
     }(_react.Component);
-    Provider1.childContextTypes = (_Provider$childContex = {
-    }, _Provider$childContex[contextProp] = _propTypesDefault.default.object.isRequired, _Provider$childContex);
+    Provider1.childContextTypes = (_Provider$childContex = {}, _Provider$childContex[contextProp] = _propTypesDefault.default.object.isRequired, _Provider$childContex);
     var Consumer1 = /*#__PURE__*/ function(_Component2) {
         _inheritsLooseDefault.default(Consumer, _Component2);
         function Consumer() {
@@ -24712,8 +24533,7 @@ function createReactContext(defaultValue, calculateChangedBits) {
         };
         return Consumer;
     }(_react.Component);
-    Consumer1.contextTypes = (_Consumer$contextType = {
-    }, _Consumer$contextType[contextProp] = _propTypesDefault.default.object, _Consumer$contextType);
+    Consumer1.contextTypes = (_Consumer$contextType = {}, _Consumer$contextType[contextProp] = _propTypesDefault.default.object, _Consumer$contextType);
     return {
         Provider: Provider1,
         Consumer: Consumer1
@@ -24843,10 +24663,8 @@ module.exports.tokensToRegExp = tokensToRegExp;
     for(var i1 = 0; i1 < tokens.length; i1++)if (typeof tokens[i1] === 'object') matches[i1] = new RegExp('^(?:' + tokens[i1].pattern + ')$', flags(options1));
     return function(obj, opts) {
         var path = '';
-        var data = obj || {
-        };
-        var options = opts || {
-        };
+        var data = obj || {};
+        var options = opts || {};
         var encode = options.pretty ? encodeURIComponentPretty : encodeURIComponent;
         for(var i = 0; i < tokens.length; i++){
             var token = tokens[i];
@@ -24973,8 +24791,7 @@ module.exports.tokensToRegExp = tokensToRegExp;
         options = keys || options;
         keys = [];
     }
-    options = options || {
-    };
+    options = options || {};
     var strict = options.strict;
     var end = options.end !== false;
     var route = '';
@@ -25023,8 +24840,7 @@ module.exports.tokensToRegExp = tokensToRegExp;
         options = keys || options;
         keys = [];
     }
-    options = options || {
-    };
+    options = options || {};
     if (path instanceof RegExp) return regexpToRegexp(path, keys);
     if (isarray(path)) return arrayToRegexp(path, keys, options);
     return stringToRegexp(path, keys, options);
@@ -25039,10 +24855,8 @@ module.exports = Array.isArray || function(arr) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 function _objectWithoutPropertiesLoose(source, excluded) {
-    if (source == null) return {
-    };
-    var target = {
-    };
+    if (source == null) return {};
+    var target = {};
     var sourceKeys = Object.keys(source);
     var key, i;
     for(i = 0; i < sourceKeys.length; i++){
@@ -25097,8 +24911,7 @@ var MEMO_STATICS = {
     propTypes: true,
     type: true
 };
-var TYPE_STATICS = {
-};
+var TYPE_STATICS = {};
 TYPE_STATICS[reactIs.ForwardRef] = FORWARD_REF_STATICS;
 TYPE_STATICS[reactIs.Memo] = MEMO_STATICS;
 function getStatics(component) {
@@ -25131,8 +24944,7 @@ function hoistNonReactStatics(targetComponent, sourceComponent, blacklist) {
                 try {
                     // Avoid failures from read-only properties
                     defineProperty(targetComponent, key, descriptor);
-                } catch (e) {
-                }
+                } catch (e) {}
             }
         }
     }
@@ -25155,45 +24967,21 @@ exports["default"] = void 0;
 var _reactRouterDom = require("react-router-dom");
 var _jsxRuntime = require("react/jsx-runtime");
 var Navbar = function Navbar() {
-    return(/*#__PURE__*/ (0, _jsxRuntime.jsxs)(_jsxRuntime.Fragment, {
+    return /*#__PURE__*/ (0, _jsxRuntime.jsxs)("nav", {
+        className: "navigation",
         children: [
-            /*#__PURE__*/ (0, _jsxRuntime.jsxs)("nav", {
-                className: "navigation",
-                children: [
-                    /*#__PURE__*/ (0, _jsxRuntime.jsx)(_reactRouterDom.NavLink, {
-                        className: "styleNavlink",
-                        to: "/movies",
-                        children: "Movies"
-                    }),
-                    /*#__PURE__*/ (0, _jsxRuntime.jsx)(_reactRouterDom.NavLink, {
-                        className: "styleNavlink",
-                        to: "/movies",
-                        children: "Most Popular"
-                    }),
-                    /*#__PURE__*/ (0, _jsxRuntime.jsx)(_reactRouterDom.NavLink, {
-                        className: "styleNavlink",
-                        to: "/movies",
-                        children: "Favorites"
-                    })
-                ]
+            /*#__PURE__*/ (0, _jsxRuntime.jsx)(_reactRouterDom.NavLink, {
+                className: "styleNavlink",
+                to: "/",
+                children: "Home"
             }),
-            /*#__PURE__*/ (0, _jsxRuntime.jsx)("div", {
-                children: /*#__PURE__*/ (0, _jsxRuntime.jsxs)("ul", {
-                    children: [
-                        /*#__PURE__*/ (0, _jsxRuntime.jsx)("li", {
-                            children: "Action"
-                        }),
-                        /*#__PURE__*/ (0, _jsxRuntime.jsx)("li", {
-                            children: "Comedy"
-                        }),
-                        /*#__PURE__*/ (0, _jsxRuntime.jsx)("li", {
-                            children: "Horror"
-                        })
-                    ]
-                })
+            /*#__PURE__*/ (0, _jsxRuntime.jsx)(_reactRouterDom.NavLink, {
+                className: "styleNavlink",
+                to: "/movies",
+                children: "Browse Movies"
             })
         ]
-    }));
+    });
 };
 _c = Navbar;
 var _default = Navbar;
@@ -25375,8 +25163,7 @@ module.exports = require('./cjs/react-jsx-runtime.development.js');
     var prevGroup;
     var prevGroupCollapsed;
     var prevGroupEnd;
-    function disabledLog() {
-    }
+    function disabledLog() {}
     disabledLog.__reactDisabledLog = true;
     function disableLogs() {
         if (disabledDepth === 0) {
@@ -25414,32 +25201,25 @@ module.exports = require('./cjs/react-jsx-runtime.development.js');
                 writable: true
             }; // $FlowFixMe Flow thinks console is immutable.
             Object.defineProperties(console, {
-                log: _assign({
-                }, props, {
+                log: _assign({}, props, {
                     value: prevLog
                 }),
-                info: _assign({
-                }, props, {
+                info: _assign({}, props, {
                     value: prevInfo
                 }),
-                warn: _assign({
-                }, props, {
+                warn: _assign({}, props, {
                     value: prevWarn
                 }),
-                error: _assign({
-                }, props, {
+                error: _assign({}, props, {
                     value: prevError
                 }),
-                group: _assign({
-                }, props, {
+                group: _assign({}, props, {
                     value: prevGroup
                 }),
-                groupCollapsed: _assign({
-                }, props, {
+                groupCollapsed: _assign({}, props, {
                     value: prevGroupCollapsed
                 }),
-                groupEnd: _assign({
-                }, props, {
+                groupEnd: _assign({}, props, {
                     value: prevGroupEnd
                 })
             });
@@ -25597,13 +25377,11 @@ module.exports = require('./cjs/react-jsx-runtime.development.js');
                 try {
                     // Lazy may contain any component type so we recursively resolve it.
                     return describeUnknownElementTypeFrameInDEV(init(payload), source, ownerFn);
-                } catch (x) {
-                }
+                } catch (x) {}
         }
         return '';
     }
-    var loggedTypeFailures = {
-    };
+    var loggedTypeFailures = {};
     var ReactDebugCurrentFrame1 = ReactSharedInternals.ReactDebugCurrentFrame;
     function setCurrentlyValidatingElement(element) {
         if (element) {
@@ -25657,8 +25435,7 @@ module.exports = require('./cjs/react-jsx-runtime.development.js');
     var specialPropKeyWarningShown;
     var specialPropRefWarningShown;
     var didWarnAboutStringRefs;
-    didWarnAboutStringRefs = {
-    };
+    didWarnAboutStringRefs = {};
     function hasValidRef(config) {
         if (hasOwnProperty.call(config, 'ref')) {
             var getter = Object.getOwnPropertyDescriptor(config, 'ref').get;
@@ -25677,7 +25454,7 @@ module.exports = require('./cjs/react-jsx-runtime.development.js');
         if (typeof config.ref === 'string' && ReactCurrentOwner.current && self && ReactCurrentOwner.current.stateNode !== self) {
             var componentName = getComponentName(ReactCurrentOwner.current.type);
             if (!didWarnAboutStringRefs[componentName]) {
-                error("Component \"%s\" contains the string ref \"%s\". Support for string refs will be removed in a future major release. This case cannot be automatically converted to an arrow function. We ask you to manually fix this case by using useRef() or createRef() instead. Learn more about using refs safely here: https://reactjs.org/link/strict-mode-string-ref", getComponentName(ReactCurrentOwner.current.type), config.ref);
+                error('Component "%s" contains the string ref "%s". Support for string refs will be removed in a future major release. This case cannot be automatically converted to an arrow function. We ask you to manually fix this case by using useRef() or createRef() instead. Learn more about using refs safely here: https://reactjs.org/link/strict-mode-string-ref', getComponentName(ReactCurrentOwner.current.type), config.ref);
                 didWarnAboutStringRefs[componentName] = true;
             }
         }
@@ -25743,8 +25520,7 @@ module.exports = require('./cjs/react-jsx-runtime.development.js');
         // an external backing store so that we can freeze the whole object.
         // This can be replaced with a WeakMap once they are implemented in
         // commonly used development environments.
-        element._store = {
-        }; // To make comparing ReactElements easier for testing purposes, we make
+        element._store = {}; // To make comparing ReactElements easier for testing purposes, we make
         // the validation flag non-enumerable (where possible, which should
         // include every environment we run tests in), so the test framework
         // ignores it.
@@ -25780,8 +25556,7 @@ module.exports = require('./cjs/react-jsx-runtime.development.js');
  * @param {string} key
  */ function jsxDEV(type, config, maybeKey, source, self) {
         var propName; // Reserved names are extracted
-        var props = {
-        };
+        var props = {};
         var key = null;
         var ref = null; // Currently, key can be spread in as a prop. This causes a potential
         // issue if key is also explicitly declared (ie. <div {...props} key="Hi" />
@@ -25847,8 +25622,7 @@ module.exports = require('./cjs/react-jsx-runtime.development.js');
  * Warn if there's no key explicitly set on dynamic arrays of children or
  * object keys are not valid. This allows us to keep track of children between
  * updates.
- */ var ownerHasKeyUseWarning = {
-    };
+ */ var ownerHasKeyUseWarning = {};
     function getCurrentComponentErrorInfo(parentType) {
         var info = getDeclarationErrorAddendum();
         if (!info) {
@@ -25879,7 +25653,7 @@ module.exports = require('./cjs/react-jsx-runtime.development.js');
         if (element && element._owner && element._owner !== ReactCurrentOwner$1.current) // Give the component that originally created this child.
         childOwner = " It was passed a child from " + getComponentName(element._owner.type) + ".";
         setCurrentlyValidatingElement$1(element);
-        error("Each child in a list should have a unique \"key\" prop.%s%s See https://reactjs.org/link/warning-keys for more information.", currentComponentErrorInfo, childOwner);
+        error('Each child in a list should have a unique "key" prop.%s%s See https://reactjs.org/link/warning-keys for more information.', currentComponentErrorInfo, childOwner);
         setCurrentlyValidatingElement$1(null);
     }
     /**
@@ -26165,7 +25939,7 @@ var Search = function Search() {
                     case 0:
                         _context.prev = 0;
                         _context.next = 3;
-                        return (0, _request.request)("".concat("http://www.omdbapi.com/", "/?s=").concat(querry, "&t=movies&apikey=27c4cff5&"));
+                        return (0, _request.request)("".concat("http://www.omdbapi.com/?i=tt3896198&apikey=27c4cff5", "/?s=").concat(querry, "&t=movies&apikey=27c4cff5&"));
                     case 3:
                         reqData = _context.sent;
                         _Search = reqData.Search;
@@ -26216,7 +25990,7 @@ var Search = function Search() {
     var updQuerry = function updQuerry(e) {
         setQuerry(e.target.value);
     };
-    return(/*#__PURE__*/ (0, _jsxRuntime.jsxs)(_jsxRuntime.Fragment, {
+    return /*#__PURE__*/ (0, _jsxRuntime.jsxs)(_jsxRuntime.Fragment, {
         children: [
             /*#__PURE__*/ (0, _jsxRuntime.jsxs)("form", {
                 className: "form",
@@ -26241,7 +26015,7 @@ var Search = function Search() {
                 data: data
             })
         ]
-    }));
+    });
 };
 _c = Search;
 var _default = Search;
@@ -26267,8 +26041,7 @@ module.exports = require("regenerator-runtime");
     var Op = Object.prototype;
     var hasOwn = Op.hasOwnProperty;
     var undefined; // More compressible than void 0.
-    var $Symbol = typeof Symbol === "function" ? Symbol : {
-    };
+    var $Symbol = typeof Symbol === "function" ? Symbol : {};
     var iteratorSymbol = $Symbol.iterator || "@@iterator";
     var asyncIteratorSymbol = $Symbol.asyncIterator || "@@asyncIterator";
     var toStringTagSymbol = $Symbol.toStringTag || "@@toStringTag";
@@ -26283,8 +26056,7 @@ module.exports = require("regenerator-runtime");
     }
     try {
         // IE 8 has a broken Object.defineProperty that only works on DOM objects.
-        define({
-        }, "");
+        define({}, "");
     } catch (err1) {
         define = function(obj, key, value) {
             return obj[key] = value;
@@ -26330,22 +26102,17 @@ module.exports = require("regenerator-runtime");
     var GenStateCompleted = "completed";
     // Returning this object from the innerFn has the same effect as
     // breaking out of the dispatch switch statement.
-    var ContinueSentinel = {
-    };
+    var ContinueSentinel = {};
     // Dummy constructor functions that we use as the .constructor and
     // .constructor.prototype properties for functions that return Generator
     // objects. For full spec compliance, you may wish to configure your
     // minifier not to mangle the names of these two functions.
-    function Generator() {
-    }
-    function GeneratorFunction() {
-    }
-    function GeneratorFunctionPrototype() {
-    }
+    function Generator() {}
+    function GeneratorFunction() {}
+    function GeneratorFunctionPrototype() {}
     // This is a polyfill for %IteratorPrototype% for environments that
     // don't natively support it.
-    var IteratorPrototype = {
-    };
+    var IteratorPrototype = {};
     define(IteratorPrototype, iteratorSymbol, function() {
         return this;
     });
@@ -26607,8 +26374,7 @@ module.exports = require("regenerator-runtime");
         this.tryEntries.push(entry);
     }
     function resetTryEntry(entry) {
-        var record = entry.completion || {
-        };
+        var record = entry.completion || {};
         record.type = "normal";
         delete record.arg;
         entry.completion = record;
@@ -26750,8 +26516,7 @@ module.exports = require("regenerator-runtime");
             if (finallyEntry && (type === "break" || type === "continue") && finallyEntry.tryLoc <= arg && arg <= finallyEntry.finallyLoc) // Ignore the finally entry if control is not jumping to a
             // location outside the try/catch block.
             finallyEntry = null;
-            var record = finallyEntry ? finallyEntry.completion : {
-            };
+            var record = finallyEntry ? finallyEntry.completion : {};
             record.type = type;
             record.arg = arg;
             if (finallyEntry) {
@@ -26814,12 +26579,7 @@ module.exports = require("regenerator-runtime");
     // regeneratorRuntime in the outer scope, which allows this module to be
     // injected easily by `bin/regenerator --include-runtime script.js`.
     return exports;
-}(// If this script is executing as a CommonJS module, use module.exports
-// as the regeneratorRuntime namespace. Otherwise create a new empty
-// object. Either way, the resulting object will be used to initialize
-// the regeneratorRuntime variable at the top of this file.
-typeof module === "object" ? module.exports : {
-});
+}(module.exports);
 try {
     regeneratorRuntime = runtime;
 } catch (accidentalStrictMode) {
@@ -56124,8 +55884,7 @@ var __assign = undefined && undefined.__assign || function() {
     return __assign.apply(this, arguments);
 };
 var __rest = undefined && undefined.__rest || function(s, e) {
-    var t = {
-    };
+    var t = {};
     for(var p in s)if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
     if (s != null && typeof Object.getOwnPropertySymbols === "function") {
         for(var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++)if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i])) t[p[i]] = s[p[i]];
@@ -56142,8 +55901,7 @@ function Tree2Element(tree) {
 function GenIcon(data) {
     return function(props) {
         return _reactDefault.default.createElement(IconBase, __assign({
-            attr: __assign({
-            }, data.attr)
+            attr: __assign({}, data.attr)
         }, props), Tree2Element(data.child));
     };
 }
@@ -56257,21 +56015,21 @@ var _Movie = _interopRequireDefault(require("./Movie"));
 var _jsxRuntime = require("react/jsx-runtime");
 var Movies = function Movies(_ref) {
     var movies1 = _ref.movies, data = _ref.data;
-    return(/*#__PURE__*/ (0, _jsxRuntime.jsx)(_jsxRuntime.Fragment, {
+    return /*#__PURE__*/ (0, _jsxRuntime.jsx)(_jsxRuntime.Fragment, {
         children: /*#__PURE__*/ (0, _jsxRuntime.jsx)("div", {
             children: (data === null || data === void 0 ? void 0 : data.length) > 0 ? /*#__PURE__*/ (0, _jsxRuntime.jsx)("div", {
                 className: "grid",
                 children: data.map(function(movies) {
-                    return(/*#__PURE__*/ (0, _jsxRuntime.jsx)("ul", {
+                    return /*#__PURE__*/ (0, _jsxRuntime.jsx)("ul", {
                         children: /*#__PURE__*/ (0, _jsxRuntime.jsx)(_Movie["default"], {
                             poster: movies.Poster,
                             title: movies.Title
                         })
-                    }, movies.imdbID));
+                    }, movies.imdbID);
                 })
             }) : null
         })
-    }));
+    });
 };
 _c = Movies;
 var _default = Movies;
@@ -56299,7 +56057,7 @@ exports["default"] = void 0;
 var _jsxRuntime = require("react/jsx-runtime");
 var Movie = function Movie(_ref) {
     var title = _ref.title, poster = _ref.poster;
-    return(/*#__PURE__*/ (0, _jsxRuntime.jsx)(_jsxRuntime.Fragment, {
+    return /*#__PURE__*/ (0, _jsxRuntime.jsx)(_jsxRuntime.Fragment, {
         children: /*#__PURE__*/ (0, _jsxRuntime.jsxs)("li", {
             children: [
                 /*#__PURE__*/ (0, _jsxRuntime.jsx)("h3", {
@@ -56310,7 +56068,7 @@ var Movie = function Movie(_ref) {
                 })
             ]
         })
-    }));
+    });
 };
 _c = Movie;
 var _default = Movie;
@@ -56337,7 +56095,7 @@ Object.defineProperty(exports, "__esModule", {
 exports["default"] = void 0;
 var _jsxRuntime = require("react/jsx-runtime");
 var Home = function Home() {
-    return(/*#__PURE__*/ (0, _jsxRuntime.jsxs)(_jsxRuntime.Fragment, {
+    return /*#__PURE__*/ (0, _jsxRuntime.jsxs)(_jsxRuntime.Fragment, {
         children: [
             /*#__PURE__*/ (0, _jsxRuntime.jsx)("h1", {
                 children: "This is home"
@@ -56346,7 +56104,7 @@ var Home = function Home() {
                 children: "Watch your favorite movies or shows"
             })
         ]
-    }));
+    });
 };
 _c = Home;
 var _default = Home;
@@ -56373,9 +56131,9 @@ Object.defineProperty(exports, "__esModule", {
 exports["default"] = void 0;
 var _jsxRuntime = require("react/jsx-runtime");
 var NoMatch = function NoMatch() {
-    return(/*#__PURE__*/ (0, _jsxRuntime.jsx)("p", {
+    return /*#__PURE__*/ (0, _jsxRuntime.jsx)("p", {
         children: "404 - not found"
-    }));
+    });
 };
 _c = NoMatch;
 var _default = NoMatch;
